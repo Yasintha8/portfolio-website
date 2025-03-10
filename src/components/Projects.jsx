@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {ExternalLink, Github } from 'lucide-react';
-import cover from '../assets/cover.png';
+import cover1 from '../assets/cover1.png';
 import cover3 from '../assets/cover3.png';
 import cover4 from '../assets/cover4.png';
 import cover5 from  '../assets/cover5.png';
@@ -70,7 +70,7 @@ function Projects() {
           title: "Interior Design Website",
           description: "A modern and elegant website design for an interior design company.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: cover,
+          image: cover1,
           github: '#',
           live: '#'
         },
