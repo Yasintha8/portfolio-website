@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {ExternalLink, Github } from 'lucide-react';
-import cover1 from '../assets/cover1.png';
-import cover3 from '../assets/cover3.png';
-import cover4 from '../assets/cover4.png';
-import cover5 from  '../assets/cover5.png';
 import netflixproj from '../assets/netflixproj.jpg';
 import crudproj from '../assets/crudproj.png';
 import cryptoproj from '../assets/cryptoproj.png';
@@ -70,7 +66,7 @@ function Projects() {
           title: "Interior Design Website",
           description: "A modern and elegant website design for an interior design company.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: cover1,
+          image: "/cover1.png",
           github: '#',
           live: '#'
         },
@@ -78,7 +74,7 @@ function Projects() {
           title: "Railway Website - UI Redesign",
           description: "This is a redesign of a railway ticket booking website in sri lanka.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: cover3,
+          image: "/cover3.png",
           github: '#',
           live: '#'
         },
@@ -92,13 +88,13 @@ function Projects() {
           title: "Clothing Shop Website Development",
           description: " User-friendly e-commerce website for clothing shop to ordering,developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: cover4
+          image: "/cover4.png"
         },
         {
           title: "E-Commerce Website Development",
           description: " UFully Responsive User-friendly e-commerce website for clothing shop to ordering,developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: cover5
+          image: "/cover5.png"
         },
         // Add more WordPress projects
       ]
