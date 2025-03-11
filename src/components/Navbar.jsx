@@ -34,19 +34,23 @@ function Navbar({ activeSection, setActiveSection }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-secondary shadow-lg' : 'bg-transparent'
-      }`}
+  scrolled ? 'backdrop-blur-lg shadow-lg' : 'bg-transparent'
+}`}
+
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-4 sm:px-20">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-2xl font-bold text-accent"
-          >
-            Yasintha Chamikara
-          </motion.div>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-3xl font-bold text-accent mr-10 cursor-pointer"
+            >
+              <span className="text-white text-4xl" >&lt;</span>
+              YC
+              <span className="text-white text-4xl">/&gt;</span>
+            </motion.div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
