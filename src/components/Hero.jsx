@@ -6,22 +6,6 @@ function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center relative container mx-auto px-50 pt-20">
 
-      {/* SVG Animated Wave Background */}
-      <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
-        <svg
-          className="wave-svg w-full h-auto absolute bottom-0 left-0 animate-wave"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          fill="none"
-        >
-          <path
-            fill="#0084FF"
-            fillOpacity="1"
-            d="M0,128L1440,192L1440,320L0,320Z"
-          />
-        </svg>
-      </div>
-
       <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -200 }}
