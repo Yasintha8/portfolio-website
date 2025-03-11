@@ -32,15 +32,15 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen justify-center container mx-auto px-10 ">
+    <section id="contact" className="min-h-screen container mx-auto px-4 py-12 md:py-16 ">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="section-heading text-5xl">Contact Me</h2>
-        <p className="section-subheading">
+        <h2 className="section-heading text-4xl md:text-5xl text-center">Contact Me</h2>
+        <p className="section-subheading text-center text-sm md:text-base">
           Lets discuss how we can work together
         </p>
 

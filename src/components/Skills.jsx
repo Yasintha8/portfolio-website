@@ -39,17 +39,17 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="min-h-screen container mx-auto px-10">
+    <section id="skills" className="min-h-screen container mx-auto px-6 md:px-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="section-heading text-5xl">Skills</h2>
-        <p className="section-subheading">My technical toolkit and areas of expertise</p>
+        <h2 className="section-heading text-4xl md:text-5xl text-center">Skills</h2>
+        <p className="section-subheading text-center text-sm md:text-base">My technical toolkit and areas of expertise</p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -57,14 +57,14 @@ function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="card"
+              className="card p-4 md:p-6 bg-secondary rounded-lg"
             >
-              <h3 className="text-xl font-bold text-accent mb-6">{category.title}</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-lg md:text-xl font-bold text-accent mb-4 md:mb-6">{category.title}</h3>
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="skill-item flex items-center gap-2">
-                    <skill.icon className="text-2xl " style={{ color: skill.color }} />
-                    <span>{skill.name}</span>
+                    <skill.icon className="text-xl md:text-2xl" style={{ color: skill.color }} />
+                    <span className="text-sm md:text-base">{skill.name}</span>
                   </div>
                 ))}
               </div>
