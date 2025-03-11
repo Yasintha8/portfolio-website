@@ -44,7 +44,7 @@ function Hero() {
           className="relative"
         >
           <motion.div
-            className="w-64 h-64 md:w-96 md:h-96 rounded-3xl bg-secondary mx-auto overflow-hidden shadow-custom"
+            className="w-64 h-64 md:w-96 md:h-96 rounded-3xl bg-secondary mx-auto overflow-hidden shadow-lg border-4 border-accent"
             whileHover={{ scale: 1.05 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}

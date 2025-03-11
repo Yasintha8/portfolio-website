@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import campuslogo from '../assets/campuslogo.png';
@@ -8,10 +8,9 @@ import cert2 from '../assets/cert2.png';
 import cert3 from '../assets/cert3.png';
 import cert4 from '../assets/cert4.png';
 import cert5 from '../assets/cert5.png';
-import cert6 from '../assets/cert6.png';
+import cert7 from '../assets/cert7.png';
 
 function Education() {
-  const [selectedCert, setSelectedCert] = useState(null);
   const scrollContainerRef = useRef(null);
   const desktopScrollContainerRef = useRef(null);
 
@@ -21,8 +20,9 @@ function Education() {
     { title: "MERN Full-Stack Development", provider: "Simplilearn", year: "2025", image: cert3, link: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzM3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg4OTU4MF84MjEzMDE2MTczOTI1MTQ3MzczNS5wbmciLCJ1c2VybmFtZSI6Illhc2ludGhhIENoYW1pa2FyYSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6129%2FIntroduction-to-MERN-Stack%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1427705797152106546&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVt8jOSncPTC0MCUyyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAMlGy1RBAAAA" },
     { title: "React.js Code Challenges", provider: "Linkedln", year: "2025", image: cert2, link: "https://www.linkedin.com/learning/certificates/78582b7068a2b0917a9007da36cf97941282b3fabc12ff743050a5a3059ce37d"},
     { title: "Introduction to Generative AI", provider: "Google", year: "2025", image: cert4, link: "https://www.cloudskillsboost.google/public_profiles/af922dc8-ca0b-4167-994a-bf117fd92241/badges/13500769?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"},
-    { title: "DP Figma Course", provider: "DP Education", year: "2025", image: cert5, link: "https://drive.google.com/file/d/1qv18J1X1p_2AbMssF1itj--a4a27Ie8o/view?usp=drive_link" },
-    { title: "Web Design Using WordPress", provider: "SuhuruSara", year: "2024", image: cert6, link: "https://drive.google.com/file/d/1mZg5VRQds4JYHkw00MbtPNpn9Z0w468e/view?usp=drive_link" },
+    { title: "DP Figma Course", provider: "DP Education", year: "2025", image: cert5, link: "https://drive.google.com/file/d/1qv18J1X1p_2AbMssF1itj--a4a27Ie8o/view?usp=sharing" },
+    { title: "Web Design Using WordPress", provider: "SuhuruSara", year: "2024", image: cert7, link: "https://drive.google.com/file/d/1mZg5VRQds4JYHkw00MbtPNpn9Z0w468e/view?usp=sharing" },
+    { title: "Database Management", provider: "SuhuruSara", year: "2024", image: cert7, link: "https://drive.google.com/file/d/1evpX1Lw5k0n_5d6OckcfmRNqL-vC4zbt/view?usp=sharing" },
   ];
 
   const scroll = (direction, isMobile = true) => {
@@ -218,25 +218,6 @@ function Education() {
         </motion.div>
       </div>
 
-      {/* Modal for Viewing Certificates */}
-      {selectedCert && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50"
-          onClick={() => setSelectedCert(null)}
-        >
-          <div className="bg-white p-4 rounded-lg shadow-lg w-full max-w-sm relative">
-            <button 
-              onClick={() => setSelectedCert(null)}
-              className="absolute -top-2 -right-2 bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm"
-            >
-              ✕
-            </button>
-            <img src={selectedCert.image} alt={selectedCert.title} className="w-full rounded-md" />
-            <h4 className="text-lg font-semibold text-center mt-3">{selectedCert.title}</h4>
-            <p className="text-center text-gray-500 text-sm">{selectedCert.provider} - {selectedCert.year}</p>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
