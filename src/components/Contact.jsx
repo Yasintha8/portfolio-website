@@ -32,7 +32,29 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen container mx-auto px-4 py-12 md:py-16 ">
+    <section id="contact" className="min-h-screen container mx-auto px-6 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 ">
+      {/* Animated background elements */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+  {[...Array(20)].map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute h-1 w-1 bg-accent/20 rounded-full"
+      style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+      }}
+      animate={{
+        scale: [1, 2, 1],
+        opacity: [0.3, 0.6, 0.3],
+      }}
+      transition={{
+        duration: 4 + Math.random() * 2,
+        repeat: Infinity,
+        delay: Math.random() * 2,
+      }}
+    />
+  ))}
+</div>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,21 +74,21 @@ function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="card flex items-center space-x-4">
+            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaEnvelope className="text-2xl text-accent" />
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
                 <p className="text-text">yasinthachamikara28@gmail.com</p>
               </div>
             </div>
-            <div className="card flex items-center space-x-4">
+            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaPhone className="text-2xl text-accent" />
               <div>
                 <h3 className="text-lg font-semibold">Phone</h3>
                 <p className="text-text">+94 76 586 5283</p>
               </div>
             </div>
-            <div className="card flex items-center space-x-4">
+            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaMapMarkerAlt className="text-2xl text-accent" />
               <div>
                 <h3 className="text-lg font-semibold">Location</h3>

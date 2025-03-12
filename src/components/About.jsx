@@ -1,31 +1,116 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { GraduationCap, Briefcase, Code, Palette, Brain, Coffee } from 'lucide-react';
 
 function About() {
+  const { scrollY } = useScroll();
+  // eslint-disable-next-line no-unused-vars
+  const opacity = useTransform(scrollY, [0, 200], [0, 1]);
+  
+  const skills = [
+    { icon: Code, label: "Full Stack Development", color: "text-blue-400" },
+    { icon: Palette, label: "UI/UX Design", color: "text-purple-400" },
+    { icon: Brain, label: "Problem Solving", color: "text-green-400" },
+  ];
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
   return (
-    <section id="about" className="min-h-screen container mx-auto px-6 md:px-10">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="section-heading text-4xl md:text-5xl text-center">About Me</h2>
-        <p className="section-subheading text-center text-sm md:text-base">
-          I am a passionate undergraduate software engineer at NSBM Green University,
-          specializing in full-stack development and UI/UX design. I am currently seeking
-          internship opportunities to apply and expand my skills in a professional environment.
-        </p>
-        
-        <div className="mt-8 flex flex-col items-center gap-6">
+    <section id="about" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            key={i}
+            className="absolute h-1 w-1 bg-accent/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [1, 2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-secondary p-4 md:p-6 rounded-lg w-full sm:w-10/12"
+            className="inline-block"
           >
-            <h3 className="text-lg md:text-xl font-bold text-accent mb-3">Education</h3>
-            <p className="text-text text-sm md:text-base">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              About <span className="text-accent">Me</span>
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-gray-300 max-w-2xl mx-auto text-lg"
+          >
+            I am a passionate undergraduate software engineer at NSBM Green University,
+            specializing in full-stack development and UI/UX design. Currently seeking
+            internship opportunities to apply and expand my skills.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 gap-8 mb-16"
+        >
+          <motion.div
+            variants={cardVariants}
+            custom={0}
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <div className="flex items-center mb-4">
+              <GraduationCap className="w-8 h-8 text-accent mr-3" />
+              <h3 className="text-xl font-semibold text-white">Education Journey</h3>
+            </div>
+            <p className="text-gray-300">
               Currently pursuing my degree in Software Engineering at NSBM Green University,
               where I am developing a strong foundation in both technical and design aspects
               of software development.
@@ -33,20 +118,77 @@ function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="bg-secondary p-4 md:p-6 rounded-lg w-full sm:w-10/12"
+            variants={cardVariants}
+            custom={1}
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <h3 className="text-lg md:text-xl font-bold text-accent mb-3">Career Goals</h3>
-            <p className="text-text text-sm md:text-base">
+            <div className="flex items-center mb-4">
+              <Briefcase className="w-8 h-8 text-accent mr-3" />
+              <h3 className="text-xl font-semibold text-white">Career Aspirations</h3>
+            </div>
+            <p className="text-gray-300">
               Seeking an internship opportunity where I can contribute my full-stack development
               and UI/UX design skills while learning from experienced professionals in the field.
             </p>
           </motion.div>
-        </div>
-      </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h3 className="text-2xl font-semibold text-white mb-8">Core Competencies</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.label}
+                variants={cardVariants}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-accent/20"
+              >
+                <motion.div
+                  animate={{
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                  className="flex justify-center mb-4"
+                >
+                  <skill.icon className={`w-10 h-10 ${skill.color}`} />
+                </motion.div>
+                <h4 className="text-white font-medium">{skill.label}</h4>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full border border-accent/20"
+          >
+            <Coffee className="w-5 h-5 text-accent" />
+            <span className="text-accent">Always eager to learn and grow</span>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

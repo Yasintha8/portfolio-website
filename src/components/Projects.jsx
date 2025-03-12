@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import {ExternalLink, Github, ChevronRight, ChevronLeft} from 'lucide-react';
+import { ExternalLink, Github, ChevronRight, ChevronLeft, Code2 } from 'lucide-react';
 import netflixproj from '../assets/netflixproj.jpg';
 import crudproj from '../assets/crudproj.png';
 import cryptoproj from '../assets/cryptoproj.png';
@@ -10,6 +9,9 @@ import businessconsproj from '../assets/businessconsproj.png';
 import travelproj from '../assets/travelproj.png';
 
 function Projects() {
+  const { scrollY } = useScroll();
+  // eslint-disable-next-line no-unused-vars
+  const opacity = useTransform(scrollY, [0, 200], [0, 1]);
   const [tabIndex, setTabIndex] = useState(0);
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -36,15 +38,15 @@ function Projects() {
           live: 'https://student-management-system-project.vercel.app/'
         },
         {
-          title: "crypto-investment-site ",
-          description: "A showcase repository featuring various cryptocurrency investment plan packages. Built with React and Tailwind CSS, this project highlights different investment options, detailing their features, and potential returns. ",
+          title: "Crypto Investment Site",
+          description: "A showcase repository featuring various cryptocurrency investment plan packages. Built with React and Tailwind CSS, this project highlights different investment options.",
           tech: ["React"],
           image: cryptoproj,
           github: 'https://github.com/Yasintha8/crypto-investment-site',
           live: 'https://investmint-crypto.vercel.app/'
         },
         {
-          title: "business-consultation-website ",
+          title: "Business Consultation Website",
           description: "Business Consultation Website - A modern, responsive frontend built with React and Tailwind CSS to showcase business consultation services",
           tech: ["React"],
           image: businessconsproj,
@@ -52,14 +54,13 @@ function Projects() {
           live: 'https://nextwave-solutions.vercel.app'
         },
         {
-          title: "tour-and-travel-website",
+          title: "Tour and Travel Website",
           description: "Tour and Travel Website - A responsive and engaging website built using HTML, CSS, and JavaScript to showcase travel destinations and services.",
           tech: ["HTML", "CSS", "JavaScript"],
           image: travelproj,
           github: 'https://github.com/Yasintha8/tour-and-travel-website',
           live: 'https://yasintha8.github.io/tour-and-travel-website/'
         }
-        // Add more web development projects
       ]
     },
     {
@@ -80,26 +81,28 @@ function Projects() {
           image: "/cover3.png",
           github: '#',
           live: '#'
-        },
-        // Add more UI/UX projects
+        }
       ]
     },
     {
       title: "WordPress Development",
       projects: [
         {
-          title: "Clothing Shop Website Development",
-          description: " User-friendly e-commerce website for clothing shop to ordering,developed using WordPress.",
+          title: "Clothing Shop Website",
+          description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: "/cover4.png"
+          image: "/cover1.png",
+          github: '#',
+          live: '#'
         },
         {
-          title: "E-Commerce Website Development",
-          description: " UFully Responsive User-friendly e-commerce website for clothing shop to ordering,developed using WordPress.",
+          title: "E-Commerce Website",
+          description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: "/cover5.png"
+          image: "/cover5.png",
+          github: '#',
+          live: '#'
         },
-        // Add more WordPress projects
       ]
     }
   ];
@@ -138,115 +141,178 @@ function Projects() {
     }
   }, []);
 
-
   return (
-    <section id="projects" className="min-h-screen container mx-auto px-4 py-12 md:py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="section-heading text-4xl md:text-5xl text-center">Projects</h2>
-        <p className="section-subheading text-center text-sm md:text-base">
-          Showcasing my best work across different domains
-        </p>
+    <section id="projects" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute h-1 w-1 bg-accent/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [1, 2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              My <span className="text-accent">Projects</span>
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-gray-300 max-w-2xl mx-auto text-lg"
+          >
+            A showcase of my creative work and technical projects
+          </motion.p>
+        </motion.div>
 
         <Tabs
           selectedIndex={tabIndex}
           onSelect={index => setTabIndex(index)}
           className="relative"
         >
-          <div className="flex md:justify-center">
-          <TabList className="flex space-x-2 md:space-x-4 mb-6 md:mb-8 overflow-x-auto pb-2 px-2 md:px-0 hide-scrollbar">
-            {projectCategories.map((category) => (
-              <Tab
-                key={category.title}
-                className="cursor-pointer  px-4 md:px-6 py-2 rounded-lg bg-secondary text-text hover:text-accent transition-colors whitespace-nowrap text-sm md:text-base"
-                selectedClassName="!bg-accent !text-primary"
-              >
-                {category.title}
-              </Tab>
-            ))}
-          </TabList>
-          </div>
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <TabList className="flex space-x-4 p-2 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20">
+              {projectCategories.map((category) => (
+                <Tab
+                  key={category.title}
+                  className="cursor-pointer px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors whitespace-nowrap text-sm md:text-base focus:outline-none"
+                  selectedClassName="!bg-accent !text-white"
+                >
+                  {category.title}
+                </Tab>
+              ))}
+            </TabList>
+          </motion.div>
+
+
           {projectCategories.map((category) => (
             <TabPanel key={category.title} className="relative">
               {showLeftArrow && (
-                <button
+                <motion.button
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   onClick={() => scroll('left')}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90  p-2 md:p-3 rounded-full shadow-lg hover:bg-accentDark backdrop-blur-sm transition-all duration-300 -translate-x-1 md:-translate-x-2"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/20 transition-all duration-300"
                 >
-                  <ChevronLeft className=" text-primary w-5 h-5 md:w-6 md:h-6" />
-                </button>
+                  <ChevronLeft className="text-white w-6 h-6" />
+                </motion.button>
               )}
               
               {showRightArrow && (
-                <button
+                <motion.button
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   onClick={() => scroll('right')}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 md:p-3 rounded-full shadow-lg  hover:bg-accentDark backdrop-blur-sm transition-all duration-300 translate-x-1 md:translate-x-2"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-accent/20 transition-all duration-300"
                 >
-                  <ChevronRight className=" text-primary w-5 h-5 md:w-6 md:h-6" />
-                </button>
+                  <ChevronRight className="text-white w-6 h-6" />
+                </motion.button>
               )}
 
               <div
                 ref={scrollContainerRef}
-                className="flex overflow-x-auto gap-4 md:gap-6 pb-4 snap-x snap-mandatory hide-scrollbar px-2 md:px-4 -mx-2 md:-mx-4"
+                className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory hide-scrollbar"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {category.projects.map((project, index) => (
                   <motion.div
                     key={project.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="min-w-[280px] md:min-w-[300px] max-w-[280px] md:max-w-[300px] bg-secondary rounded-xl shadow-lg overflow-hidden snap-center transform hover:-translate-y-1 transition-all duration-300"
+                    viewport={{ once: true }}
+                    className="min-w-[300px] md:min-w-[350px] bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden snap-center group border border-accent/20 hover:border-accent/40 transition-all duration-300"
                   >
-                    <div className="h-40 md:h-48 overflow-hidden relative group">
+                    <motion.div 
+                      className="h-48 overflow-hidden relative"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="p-4 md:p-6">
-                      <h3 className="text-lg md:text-xl font-bold text-accent mb-2 line-clamp-1">
+                    </motion.div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
                         {project.title}
                       </h3>
-                      <p className="text-text mb-3 md:mb-4 text-sm line-clamp-2">
+                      <p className="text-gray-300 mb-4 text-sm line-clamp-2">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
+                      <div className="flex flex-wrap gap-2 mb-4">
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 md:px-3 py-1 bg-primary rounded-full text-xs font-medium text-accent"
+                            className="px-3 py-1 bg-accent/10 rounded-full text-xs font-medium text-accent"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
-                      <div className="flex space-x-4 pt-2 border-t border-gray-100">
-                        <a
+                      <div className="flex space-x-4 pt-2 border-t border-white/10">
+                        <motion.a
                           href={project.github}
-                          className="flex items-center text-text hover:text-accent transition-colors text-sm"
+                          className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
                           target="_blank"
                           rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                         >
-                          <Github className="w-4 h-4 mr-1" />
+                          <Github className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
                           Code
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
                           href={project.live}
-                          className="flex items-center text-text hover:text-accent transition-colors text-sm"
+                          className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
                           target="_blank"
                           rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                         >
-                          <ExternalLink className="w-4 h-4 mr-1" />
+                          <ExternalLink className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
                           Live Demo
-                        </a>
+                        </motion.a>
                       </div>
                     </div>
                   </motion.div>
@@ -255,7 +321,23 @@ function Projects() {
             </TabPanel>
           ))}
         </Tabs>
-      </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full border border-accent/20"
+          >
+            <Code2 className="w-5 h-5 text-accent" />
+            <span className="text-accent">More projects coming soon!</span>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -76,7 +76,7 @@
 
 /* Form Styling */
 .form-input {
-  @apply w-full px-4 py-2 rounded-lg bg-secondary border border-text/30 
+  @apply w-full px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40
          text-textLight focus:border-accent focus:outline-none transition-colors duration-300;
 }
 

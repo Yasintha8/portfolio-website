@@ -1,64 +1,211 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import { GithubIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 import profileimg from '../assets/profileimg.png';
 
 function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
+  
+  const floatingElements = {
+    initial: { y: 0 },
+    animate: {
+      y: [-20, 20, -20],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const socialLinks = [
+    { Icon: GithubIcon, href: "#", delay: 0.2 },
+    { Icon: LinkedinIcon, href: "#", delay: 0.4 },
+    { Icon: TwitterIcon, href: "#", delay: 0.6 },
+  ];
+
   return (
-    <section id="home" className="min-h-screen flex items-center relative container mx-auto px-50 pt-20">
-
-      <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, x: -200 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-left"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-            Hi, I am <span className="text-accent">Yasintha Chamikara</span>
-          </h1>
-          <div className="text-2xl md:text-3xl mb-6 font-semibold text-white">
-            <TypeAnimation
-              sequence={[
-                'Full Stack Web Developer',
-                2000,
-                'UI/UX Designer',
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </div>
-          <p className="text-white text-lg mb-8">
-            Passionate about creating beautiful and functional digital experiences
-          </p>
-          <button className="btn-primary hover:bg-accentDark">
-            Download CV
-          </button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="relative"
-        >
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+      {/* Background Decorative Elements */}
+      <motion.div
+        className="absolute inset-0 opacity-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 1 }}
+      >
+        {[...Array(20)].map((_, i) => (
           <motion.div
-            className="w-64 h-64 md:w-96 md:h-96 rounded-3xl bg-secondary mx-auto overflow-hidden shadow-lg border-4 border-accent"
-            whileHover={{ scale: 1.05 }}
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+            key={i}
+            className="absolute h-2 w-2 bg-accent rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </motion.div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-8"
           >
-            <motion.img
-              src={profileimg}
-              alt="Profile"
-              className="w-full h-full object-cover"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1 }}
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-4 py-2 bg-accent/10 rounded-full"
+            >
+              <span className="text-accent">👋 Welcome to my portfolio</span>
+            </motion.div>
+
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold text-white leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Hi, I am{" "}
+              <motion.span
+                className="text-accent inline-block"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Yasintha Chamikara
+              </motion.span>
+            </motion.h1>
+
+            <motion.div
+              className="text-2xl md:text-3xl font-semibold text-gray-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <TypeAnimation
+                sequence={[
+                  'Full Stack Web Developer',
+                  2000,
+                  'UI/UX Designer',
+                  2000,
+                  'Problem Solver',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="text-accent"
+              />
+            </motion.div>
+
+            <motion.p
+              className="text-gray-300 text-lg max-w-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              Passionate about creating beautiful and functional digital experiences that make a difference. Lets build something amazing together.
+            </motion.p>
+
+            <motion.div
+              className="flex gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <motion.button
+                className="btn-primary bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Download CV
+              </motion.button>
+              <motion.button
+                className="btn-secondary border-2 border-accent text-accent px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Me
+              </motion.button>
+            </motion.div>
+
+            <motion.div
+              className="flex gap-6 mt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              {socialLinks.map(({ Icon, href, delay }, index) => (
+                <motion.a
+                  key={index}
+                  href={href}
+                  className="text-gray-400 hover:text-accent transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: delay }}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                >
+                  <Icon size={24} />
+                </motion.a>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            style={{ y }}
+            className="relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="w-72 h-72 md:w-[450px] md:h-[450px] rounded-full mx-auto relative"
+              variants={floatingElements}
+              initial="initial"
+              animate="animate"
+            >
+              {/* Decorative circles */}
+              <motion.div
+                className="absolute inset-0 border-2 border-accent rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute inset-4 border-2 border-accent/50 rounded-full"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              />
+              
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.img
+                  src={profileimg}
+                  alt="Profile"
+                  className="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover shadow-xl"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  whileHover={{ scale: 1.05 }}
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

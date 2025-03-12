@@ -37,7 +37,29 @@ function Education() {
   };
 
   return (
-    <section id="education" className="min-h-screen container mx-auto px-6">
+    <section id="education" className="min-h-screen container mx-auto px-6 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute h-1 w-1 bg-accent/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [1, 2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
       {/* Mobile View */}
       <div className="md:hidden">
         <motion.div
@@ -58,7 +80,7 @@ function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-secondary p-4 rounded-lg mb-8 shadow-lg"
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
           >
             <h3 className="text-xl font-bold mb-2 text-accent">
               🎓 BSc (Hons) in Software Engineering
@@ -77,7 +99,7 @@ function Education() {
 
           {/* Certificates Section */}
           <div className="relative">
-            <h3 className="text-xl font-bold mb-4">📜 Certificates</h3>
+            <h3 className="text-xl font-bold mb-4 mt-4">📜 Certificates</h3>
             
             {/* Scroll Buttons */}
             <button 
@@ -106,7 +128,7 @@ function Education() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex-none w-[250px] snap-center bg-secondary p-4 rounded-lg shadow-md"
+                  className="flex-none w-[250px] snap-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
                 >
                   <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2 mx-auto" />
                   <h4 className="text-base font-semibold text-center mb-1">{cert.title}</h4>
@@ -144,7 +166,7 @@ function Education() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-secondary p-6 rounded-lg mb-6 shadow-lg"
+              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
             >
               <h3 className="text-2xl font-bold text-accent mb-2">
                 🎓 BSc (Hons) in Software Engineering
@@ -167,7 +189,7 @@ function Education() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-secondary p-6 rounded-lg shadow-lg relative"
+              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors mt-4"
             >
               <h3 className="text-2xl font-bold text-accent mb-4">📜 Certificates</h3>
               
@@ -198,7 +220,7 @@ function Education() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className="flex-none w-[300px] flex flex-col items-center bg-primary p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                      className="flex-none w-[300px] flex flex-col items-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
                     >
                       <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2" />
                       <h4 className="text-lg font-semibold text-center">{cert.title}</h4>
