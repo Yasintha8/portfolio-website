@@ -123,7 +123,7 @@ function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.button
-                className="btn-primary bg-accent hover:bg-accent/90 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all"
+                className="btn-primary bg-accent hover:bg-accent/90 text-gray-900 px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
