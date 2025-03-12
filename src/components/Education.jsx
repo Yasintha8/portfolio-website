@@ -37,7 +37,7 @@ function Education() {
   };
 
   return (
-    <section id="education" className="min-h-screen container mx-auto px-6 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="education" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
