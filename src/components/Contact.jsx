@@ -32,29 +32,29 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen container px-4 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 ">
+    <section id="contact" className="min-h-screen container mx-auto px-4 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 ">
       {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute h-1 w-1 bg-accent/20 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [1, 2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
+<div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+  {[...Array(20)].map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute h-1 w-1 bg-accent/20 rounded-full"
+      style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+      }}
+      animate={{
+        scale: [1, 2, 1],
+        opacity: [0.3, 0.6, 0.3],
+      }}
+      transition={{
+        duration: 4 + Math.random() * 2,
+        repeat: Infinity,
+        delay: Math.random() * 2,
+      }}
+    />
+  ))}
+</div>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

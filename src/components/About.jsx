@@ -7,7 +7,7 @@ function About() {
   const opacity = useTransform(scrollY, [0, 200], [0, 1]);
   
   const skills = [
-    { icon: Code, label: "Full Stack Development", color: "text-blue-400" },
+    { icon: Code, label: "Web Development", color: "text-blue-400" },
     { icon: Palette, label: "UI/UX Design", color: "text-purple-400" },
     { icon: Brain, label: "Problem Solving", color: "text-green-400" },
   ];

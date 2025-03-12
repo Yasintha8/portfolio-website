@@ -11,7 +11,9 @@ import {
   Figma,
   Boxes,
   PenTool,
-  Monitor
+  Monitor,
+  FileText, // Added icon for WordPress
+  Home // Added WordPress icon
 } from 'lucide-react';
 
 function Skills() {
@@ -46,6 +48,16 @@ function Skills() {
         { name: "Figma", icon: Figma, color: "text-pink-400" },
         { name: "Wireframing", icon: PenTool, color: "text-blue-400" },
         { name: "Prototyping", icon: Monitor, color: "text-indigo-400" }
+      ]
+    },
+    // New WordPress Development category
+    {
+      title: "WordPress Development",
+      icon: Home,
+      skills: [
+        { name: "Theme Development", icon: FileText, color: "text-indigo-500" },
+        { name: "Custom Post Types", icon: Database, color: "text-green-400" },
+        { name: "WooCommerce Integration", icon: Server, color: "text-orange-500" }
       ]
     }
   ];
@@ -153,7 +165,9 @@ function Skills() {
               variants={cardVariants}
               custom={index}
               whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
+              className={`${
+                category.title === "WordPress Development" ? "justify-center" : ""
+              } bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors`}
             >
               <div className="flex items-center mb-6">
                 <category.icon className="w-8 h-8 text-accent mr-3" />

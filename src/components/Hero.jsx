@@ -99,8 +99,6 @@ function Hero() {
                   2000,
                   'UI/UX Designer',
                   2000,
-                  'Problem Solver',
-                  2000,
                 ]}
                 wrapper="span"
                 speed={50}
@@ -125,12 +123,13 @@ function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.button
-                className="btn-primary bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold transition-all"
+                className="btn-primary bg-accent hover:bg-accent/90 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Download CV
               </motion.button>
+
               <motion.button
                 
                 className="btn-secondary border-2 border-accent text-accent px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-all"

@@ -91,7 +91,7 @@ function Projects() {
           title: "Clothing Shop Website",
           description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: "/cover1.png",
+          image: "/cover4.png",
           github: '#',
           live: '#'
         },
