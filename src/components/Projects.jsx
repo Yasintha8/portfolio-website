@@ -213,7 +213,7 @@ function Projects() {
                 <Tab
                   key={category.title}
                   className="cursor-pointer px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors whitespace-nowrap text-sm md:text-base focus:outline-none"
-                  selectedClassName="!bg-accent !text-white"
+                  selectedClassName="!bg-accent !text-gray-900"
                 >
                   {category.title}
                 </Tab>
