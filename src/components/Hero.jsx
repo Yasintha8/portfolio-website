@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
+import { GithubIcon, LinkedinIcon} from 'lucide-react';
 import profileimg from '../assets/profileimg.png';
 
 function Hero() {
@@ -20,9 +20,8 @@ function Hero() {
   };
 
   const socialLinks = [
-    { Icon: GithubIcon, href: "#", delay: 0.2 },
-    { Icon: LinkedinIcon, href: "#", delay: 0.4 },
-    { Icon: TwitterIcon, href: "#", delay: 0.6 },
+    { Icon: GithubIcon, href: "https://github.com/Yasintha8", delay: 0.2 },
+    { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/yasintha-chamikara/", delay: 0.4 },
   ];
 
   return (
@@ -133,9 +132,11 @@ function Hero() {
                 Download CV
               </motion.button>
               <motion.button
+                
                 className="btn-secondary border-2 border-accent text-accent px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                
               >
                 Contact Me
               </motion.button>
