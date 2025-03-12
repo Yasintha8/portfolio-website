@@ -99,7 +99,7 @@ function Education() {
 
           {/* Certificates Section */}
           <div className="relative">
-            <h3 className="text-xl font-bold mb-4 mt-4">📜 Certificates</h3>
+            <h3 className="text-xl font-bold mb-4 text-accent mt-4">📜 Certificates</h3>
             
             {/* Scroll Buttons */}
             <button 
