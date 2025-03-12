@@ -66,7 +66,7 @@ function Contact() {
           Lets discuss how we can work together
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6  md:gap-8 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -74,21 +74,21 @@ function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
-              <FaEnvelope className="text-2xl text-accent" />
-              <div className="text-center sm:text-left">
+            <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
+              <FaEnvelope className="text-xl text-accent" />
+              <div className="text-center  sm:text-left">
               <h3 className="text-left sm:text-lg font-semibold">Email</h3>
               <p className="text-sm sm:text-base text-text break-all">yasinthachamikara28@gmail.com</p>
             </div>
             </div>
-            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
+            <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaPhone className="text-2xl text-accent" />
               <div className="text-center sm:text-left">
                 <h3 className="text-left sm:text-lg font-semibold">Phone</h3>
                 <p className="text-sm sm:text-base text-text break-all">+94 76 586 5283</p>
               </div>
             </div>
-            <div className="card flex items-center space-x-4 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
+            <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaMapMarkerAlt className="text-2xl text-accent" />
               <div className="text-center sm:text-left">
                 <h3 className="text-left sm:text-lg font-semibold">Location</h3>
