@@ -32,7 +32,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800">
+    <section id="contact" className="min-h-screen mx-auto px-6 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           {[...Array(20)].map((_, i) => (
@@ -61,7 +61,7 @@ function Contact() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="section-heading text-4xl md:text-5xl text-center">Contact Me</h2>
+        <h2 className="section-heading text-4xl md:text-5xl text-center">Contact <span className="text-accent">Me</span></h2>
         <p className="section-subheading text-center text-sm md:text-base">
           Lets discuss how we can work together
         </p>

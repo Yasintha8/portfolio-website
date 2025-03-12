@@ -37,7 +37,7 @@ function Education() {
   };
 
   return (
-    <section id="education" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800">
+    <section id="education" className="min-h-screen py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -67,9 +67,9 @@ function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-[500px] mx-auto"
+          className="max-w-[500px] mx-auto px-6 "
         >
-          <h2 className="text-3xl font-bold text-center mb-2">Education & Certificates</h2>
+          <h2 className="text-3xl font-bold text-center mb-2">Education & <span className="text-accent">Certificates</span></h2>
           <p className="text-center text-sm text-gray-600 mb-8">
             My academic journey and achievements
           </p>
@@ -154,7 +154,7 @@ function Education() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-heading text-4xl md:text-5xl text-center">Education & Certificates</h2>
+          <h2 className="section-heading text-4xl md:text-5xl text-center">Education & <span className="text-accent">Certificates</span></h2>
           <p className="section-subheading text-center text-sm md:text-base">
             My academic journey and achievements
           </p>
