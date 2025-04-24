@@ -77,7 +77,7 @@ function Contact() {
               <FaEnvelope className="text-xl text-accent" />
               <div className="text-center  sm:text-left">
               <h3 className="text-left sm:text-lg font-semibold">Email</h3>
-              <p className="text-sm sm:text-base text-text break-all">yasinthachamikara28@gmail.com</p>
+              <p className="text-sm sm:text-base text-text break-all">yasintha.chamikara.way@gmail.com</p>
             </div>
             </div>
             <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
