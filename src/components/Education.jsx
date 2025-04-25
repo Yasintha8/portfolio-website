@@ -175,7 +175,7 @@ function Education() {
                 <img src={campuslogo} alt="NSBM Logo" className="w-10 h-10 mr-2" />
                 <span className="font-medium">NSBM Green University</span>
               </p>
-              <p className="text-text mb-4 font-semibold text-gray-400">2022 - Present</p>
+              <p className="mb-4 font-semibold text-gray-400">2022 - Present</p>
               <ul className="list-disc list-inside text-text space-y-2">
                 <li>⚡ Specialized in Full-stack Development</li>
                 <li>🎨 Focus on UI/UX Design principles</li>
