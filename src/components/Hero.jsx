@@ -123,7 +123,7 @@ function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="/YasinthaChamikara_CV.pdf"
+                href="https://drive.google.com/file/d/160V1b1p2FbgR61u14jPHEMcrCXq7n8zL/view?usp=sharing"
                 download
                 className="btn-primary bg-accent hover:bg-accent/90 text-gray-900 px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center"
                 whileHover={{ scale: 1.05 }}
