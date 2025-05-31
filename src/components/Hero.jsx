@@ -122,25 +122,24 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <motion.button
-                className="btn-primary bg-accent hover:bg-accent/90 text-gray-900 px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all"
+              <motion.a
+                href="/YasinthaChamikara_CV.pdf"
+                download
+                className="btn-primary bg-accent hover:bg-accent/90 text-gray-900 px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Download CV
-              </motion.button>
+              </motion.a>
 
               <motion.button
-                
                 className="btn-secondary border-2 border-accent text-accent px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                
               >
                 Contact Me
               </motion.button>
             </motion.div>
-
             <motion.div
               className="flex gap-6 mt-8"
               initial={{ opacity: 0 }}
