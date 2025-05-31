@@ -7,14 +7,15 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
     <div className="bg-primary min-h-screen text-textLight">
+      <Toaster position='top-right' />
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
       <main>
         <Hero />
@@ -24,7 +25,6 @@ function App() {
         <Education />
         <Contact />
       </main>
-      <ToastContainer />
       <Footer />
     </div>
   );

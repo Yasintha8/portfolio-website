@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaBehance, FaDribbble } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-secondary py-8 mt-20">
+    <footer className="bg-secondary py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-text mb-4 md:mb-0">

@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { ExternalLink, Github, ChevronRight, ChevronLeft, Code2 } from 'lucide-react';
+import ecomproj from '../assets/ecomproj.png';
 import netflixproj from '../assets/netflixproj.jpg';
-import crudproj from '../assets/crudproj.png';
+import cmsproj from '../assets/cmsproj.png';
 import cryptoproj from '../assets/cryptoproj.png';
 import businessconsproj from '../assets/businessconsproj.png';
 import travelproj from '../assets/travelproj.png';
@@ -22,20 +23,28 @@ function Projects() {
       title: "Web Development",
       projects: [
         {
+          title: "E-commerce Web Application",
+          description: "Full Stack Wall Art Selling Shop web application - It enables users to sell wall arts, and allows the admin to manage products, orders, and users via a dedicated admin panel.",
+          tech: ["React", "Node.js", "MongoDB ", "Express"],
+          image: ecomproj,
+          github: 'https://github.com/Yasintha8/crystal-beauty-clear-frontend',
+          live: '#'
+        },
+        {
+          title: "Cleaning Management System",
+          description: "Full-Stack Cleaning Management System - It enables users to book cleaning services, manage their bookings, and allows the admin to manage services and users via a dedicated admin panel.",
+          tech: ["React", "Node.js", "MongoDB", "Express"],
+          image: cmsproj,
+          github: 'https://github.com/Yasintha8/cleaning-service-management-system-frontend.git',
+          live: 'https://smartcare-cleaningservice.vercel.app/'
+        },
+        {
           title: "Netflix Clone",
-          description: "A fully functional Netflix clone built using React, Firebase for authentication, and the TMDB API for fetching movie data.",
+          description: "A fully functional Netflix clone built, Firebase for authentication, and the TMDB API for fetching movie data. It includes features such as user authentication, movie browsing, and a responsive design.",
           tech: ["React", "Node.js", "Firebase", "TMDB API"],
           image: netflixproj,
           github: 'https://github.com/Yasintha8/netflix-clone-react',
           live: 'https://netflix-clone-projectdev.vercel.app/'
-        },
-        {
-          title: "Student Management System",
-          description: "Full-Stack Student Management System - A CRUD application with a React and Tailwind CSS frontend and a Node.js, Express, and MongoDB backend for managing student data.",
-          tech: ["React", "Node.js", "MongoDB", "Express"],
-          image: crudproj,
-          github: 'https://github.com/Yasintha8/student-management-frontend',
-          live: 'https://student-management-system-project.vercel.app/'
         },
         {
           title: "Crypto Investment Site",
@@ -47,7 +56,7 @@ function Projects() {
         },
         {
           title: "Business Consultation Website",
-          description: "Business Consultation Website - A modern, responsive frontend built with React and Tailwind CSS to showcase business consultation services",
+          description: "Business Consultation Website - A modern, responsive frontend built with React and Tailwind CSS to showcase business consultation services. It features a clean and user-friendly design.",
           tech: ["React"],
           image: businessconsproj,
           github: 'https://github.com/Yasintha8/business-consultation-website',
@@ -55,7 +64,7 @@ function Projects() {
         },
         {
           title: "Tour and Travel Website",
-          description: "Tour and Travel Website - A responsive and engaging website built using HTML, CSS, and JavaScript to showcase travel destinations and services.",
+          description: "Tour and Travel Website - A responsive and engaging website built using HTML, CSS, and JavaScript to showcase travel destinations and services. It features a clean and user-friendly design.",
           tech: ["HTML", "CSS", "JavaScript"],
           image: travelproj,
           github: 'https://github.com/Yasintha8/tour-and-travel-website',
@@ -71,16 +80,14 @@ function Projects() {
           description: "A modern and elegant website design for an interior design company.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
           image: "/cover1.png",
-          github: '#',
-          live: '#'
+          live: 'https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=0Ut054lTamvvJeiu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671'
         },
         {
           title: "Railway Website - UI Redesign",
           description: "This is a redesign of a railway ticket booking website in sri lanka.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
           image: "/cover3.png",
-          github: '#',
-          live: '#'
+          live: 'https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=19-3&starting-point-node-id=19%3A3&t=soMIx04z3RXWTo2d-1'
         }
       ]
     },
@@ -92,7 +99,6 @@ function Projects() {
           description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
           image: "/cover4.png",
-          github: '#',
           live: '#'
         },
         {
@@ -100,7 +106,6 @@ function Projects() {
           description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
           image: "/cover5.png",
-          github: '#',
           live: '#'
         },
       ]
@@ -252,70 +257,56 @@ function Projects() {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {category.projects.map((project, index) => (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="min-w-[300px] md:min-w-[350px] bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden snap-center group border border-accent/20 hover:border-accent/40 transition-all duration-300"
-                  >
-                    <motion.div 
-                      className="h-48 overflow-hidden relative"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
+                 <motion.div
+                      key={project.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0"
                     >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </motion.div>
-                    
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300 mb-4 text-sm line-clamp-2">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-accent/10 rounded-full text-xs font-medium text-accent"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex space-x-4 pt-2 border-t border-white/10">
-                        <motion.a
-                          href={project.github}
-                          className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Github className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
-                          Code
-                        </motion.a>
-                        <motion.a
-                          href={project.live}
-                          className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
-                          Live Demo
-                        </motion.a>
-                      </div>
-                    </div>
-                  </motion.div>
+                      <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                      <div className="p-5">
+                        <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
+                        <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tech.map((tech, idx) => (
+                            <span
+                              key={idx}
+                              className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex space-x-4 pt-2 border-t border-white/10">
+                            {category.title === "Web Development" && (
+                              <motion.a
+                                href={project.github}
+                                className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                <Github className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
+                                Code
+                              </motion.a>
+                            )}
+                            <motion.a
+                              href={project.live}
+                              className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              <ExternalLink className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
+                              Live Demo
+                            </motion.a>
+                          </div>
+                  </div>
+                </motion.div>
                 ))}
               </div>
             </TabPanel>

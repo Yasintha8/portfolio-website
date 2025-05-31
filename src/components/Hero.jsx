@@ -54,7 +54,7 @@ function Hero() {
         ))}
       </motion.div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-12 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -100 }}

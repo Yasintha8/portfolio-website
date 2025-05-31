@@ -1,20 +1,19 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, } from 'framer-motion';
+import { SiNodedotjs, SiExpress, SiMongodb, SiGraphql, SiDocker,SiFirebase,SiFigma,SiHtml5,SiJavascript,SiReact,SiTypescript,SiPostgresql,SiGithub,SiVercel,SiGithubactions} 
+  from 'react-icons/si';
 import { 
   Code2, 
   Palette, 
   Database, 
-  Layout, 
-  Terminal, 
-  Cpu,
-  Globe,
+  Layout,
   Server,
-  Figma,
-  Boxes,
   PenTool,
   Monitor,
-  FileText, // Added icon for WordPress
-  Home // Added WordPress icon
+  FileText, 
+  Home,
+  Rocket,
 } from 'lucide-react';
+import { FiLink2 } from 'react-icons/fi';
 
 function Skills() {
   const { scrollY } = useScroll();
@@ -26,31 +25,50 @@ function Skills() {
       title: "Frontend Development",
       icon: Layout,
       skills: [
-        { name: "HTML/CSS", icon: Globe, color: "text-orange-400" },
-        { name: "JavaScript", icon: Code2, color: "text-yellow-400" },
-        { name: "React", icon: Boxes, color: "text-blue-400" },
-        { name: "TypeScript", icon: Terminal, color: "text-blue-500" }
+        { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-400" },
+        { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "React", icon: SiReact, color: "text-blue-400" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" }
       ]
     },
     {
       title: "Backend Development",
       icon: Server,
       skills: [
-        { name: "Node.js", icon: Cpu, color: "text-green-400" },
-        { name: "MongoDB", icon: Database, color: "text-green-500" },
-        { name: "RESTful APIs", icon: Terminal, color: "text-purple-400" }
+        { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+        { name: "Express.js", icon: SiExpress, color: "text-gray-400" },
+        { name: "RESTful APIs", icon: FiLink2, color: "text-purple-400" }
       ]
+    },
+    {
+      title: "Database Management",
+      icon: Database,
+      skills: [
+        { name: "MySQL", icon: SiGraphql, color: "text-blue-500" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-indigo-500" },
+        { name: "Firebase", icon: SiFirebase, color: "text-orange-500" }
+      ]
+    },
+    {
+      title: "DevOps & Deployment",
+      icon: Rocket,
+      skills: [
+        { name: "Git & GitHub", icon: SiGithub, color: "text-gray-500" },
+        { name: "Netlify / Vercel", icon: SiVercel, color: "text-blue-500" },
+        { name: "Docker", icon: SiDocker, color: "text-cyan-500" },
+        { name: "CI/CD", icon: SiGithubactions, color: "text-indigo-400" }
+  ]
     },
     {
       title: "UI/UX Design",
       icon: Palette,
       skills: [
-        { name: "Figma", icon: Figma, color: "text-pink-400" },
+        { name: "Figma", icon: SiFigma, color: "text-pink-400" },
         { name: "Wireframing", icon: PenTool, color: "text-blue-400" },
         { name: "Prototyping", icon: Monitor, color: "text-indigo-400" }
       ]
     },
-    // New WordPress Development category
     {
       title: "WordPress Development",
       icon: Home,
