@@ -263,7 +263,7 @@ function Projects() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0"
+                      className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl border-2 border-accent/20 hover:border-accent/40 transition-colors overflow-hidden shadow-lg snap-start flex-shrink-0"
                     >
                       <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
                       <div className="p-5">
