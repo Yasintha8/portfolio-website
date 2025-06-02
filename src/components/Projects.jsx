@@ -83,7 +83,7 @@ function Projects() {
           live: 'https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=0Ut054lTamvvJeiu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671'
         },
         {
-          title: "Railway Website - UI Redesign",
+          title: "Railway Website - UI Redesign (Group)",
           description: "This is a redesign of a railway ticket booking website in sri lanka.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
           image: "/cover3.png",
@@ -99,10 +99,10 @@ function Projects() {
           description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
           image: "/cover4.png",
-          live: '#'
+          live: 'http://ceylonfashionhub.rf.gd/'
         },
         {
-          title: "E-Commerce Website",
+          title: "Clothing Shop Website",
           description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
           image: "/cover5.png",

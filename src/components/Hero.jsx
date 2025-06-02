@@ -97,6 +97,8 @@ function Hero() {
                 sequence={[
                   'Full Stack Web Developer',
                   2000,
+                  'MERN Stack Developer',
+                  2000,
                   'UI/UX Designer',
                   2000,
                 ]}
@@ -113,32 +115,36 @@ function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Passionate about creating beautiful and functional digital experiences that make a difference. Lets build something amazing together.
+              I’m a dedicated Full Stack Developer with a strong foundation in the MERN stack, focused on delivering scalable, user-centric web applications. 
             </motion.p>
 
             <motion.div
-              className="flex gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="https://drive.google.com/file/d/160V1b1p2FbgR61u14jPHEMcrCXq7n8zL/view?usp=sharing"
+                href="https://drive.google.com/file/d/1wNkWfSQkp941EVR0fiXj1FMf0F_oFLcl/view?usp=sharing"
                 download
-                className="btn-primary bg-accent hover:bg-accent/90 text-gray-900 px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center"
+                className="btn-primary bg-accent hover:bg-accent/90 hover: text-gray-900 px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Download CV
               </motion.a>
-
-              <motion.button
-                className="btn-secondary border-2 border-accent text-accent px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Me
-              </motion.button>
+                <button>
+                  <a href="#contact">
+                    <motion.button
+                      className="btn-primary bg-transparent border-2 border-accent text-accent hover:bg-accent/90 hover:text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Contact Me
+                    </motion.button>
+                  </a>
+                </button>
+              
             </motion.div>
             <motion.div
               className="flex gap-6 mt-8"
