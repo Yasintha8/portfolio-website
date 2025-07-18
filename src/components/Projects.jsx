@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { ExternalLink, Github, ChevronRight, ChevronLeft, Code2 } from 'lucide-react';
 import ecomproj from '../assets/ecomproj.png';
 import netflixproj from '../assets/netflixproj.jpg';
+import hotelproj from '../assets/hotelproj.png';
 import cmsproj from '../assets/cmsproj.png';
 import cryptoproj from '../assets/cryptoproj.png';
 import businessconsproj from '../assets/businessconsproj.png';
@@ -27,8 +28,16 @@ function Projects() {
           description: "Full Stack Wall Art Selling Shop web application - It enables users to sell wall arts, and allows the admin to manage products, orders, and users via a dedicated admin panel.",
           tech: ["React", "Node.js", "MongoDB ", "Express"],
           image: ecomproj,
-          github: 'https://github.com/Yasintha8/crystal-beauty-clear-frontend',
-          live: '#'
+          github: 'https://github.com/Yasintha8/wall-art-selling-shop-frontend.git',
+          live: 'https://vibecanvas-wallart-selling-shop.vercel.app'
+        },
+        {
+          title: "Hotel Booking Web Application",
+          description: "Full-Stack Hotel Booking Web Application. The application allows users to browse hotels and rooms, make secure bookings, and hotel owners to manage listings.payments are processed using Stripe.",
+          tech: ["React", "Node.js", "MongoDB ", "Express"],
+          image: hotelproj,
+          github: 'https://github.com/Yasintha8/hotel-booking-web-app.git',
+          live: 'https://staysure.vercel.app'
         },
         {
           title: "Cleaning Management System",
@@ -36,7 +45,7 @@ function Projects() {
           tech: ["React", "Node.js", "MongoDB", "Express"],
           image: cmsproj,
           github: 'https://github.com/Yasintha8/cleaning-service-management-system-frontend.git',
-          live: 'https://smartcare-cleaningservice.vercel.app/'
+          live: 'https://smartcare-cleaningservice.vercel.app'
         },
         {
           title: "Netflix Clone",
@@ -44,7 +53,7 @@ function Projects() {
           tech: ["React", "Node.js", "Firebase", "TMDB API"],
           image: netflixproj,
           github: 'https://github.com/Yasintha8/netflix-clone-react',
-          live: 'https://netflix-clone-projectdev.vercel.app/'
+          live: 'https://netflix-clone-projectdev.vercel.app'
         },
         {
           title: "Crypto Investment Site",
@@ -52,7 +61,7 @@ function Projects() {
           tech: ["React"],
           image: cryptoproj,
           github: 'https://github.com/Yasintha8/crypto-investment-site',
-          live: 'https://investmint-crypto.vercel.app/'
+          live: 'https://investmint-crypto.vercel.app'
         },
         {
           title: "Business Consultation Website",
@@ -68,7 +77,7 @@ function Projects() {
           tech: ["HTML", "CSS", "JavaScript"],
           image: travelproj,
           github: 'https://github.com/Yasintha8/tour-and-travel-website',
-          live: 'https://yasintha8.github.io/tour-and-travel-website/'
+          live: 'https://yasintha8.github.io/tour-and-travel-website'
         }
       ]
     },
@@ -83,8 +92,8 @@ function Projects() {
           live: 'https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=0Ut054lTamvvJeiu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671'
         },
         {
-          title: "Railway Website - UI Redesign (Group)",
-          description: "This is a redesign of a railway ticket booking website in sri lanka.",
+          title: "Railway Website - UI Redesign",
+          description: "This is a redesign of a railway ticket booking website in sri lanka. - Group project.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
           image: "/cover3.png",
           live: 'https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=19-3&starting-point-node-id=19%3A3&t=soMIx04z3RXWTo2d-1'
@@ -92,14 +101,14 @@ function Projects() {
       ]
     },
     {
-      title: "WordPress Development",
+      title: "WordPress Dev",
       projects: [
         {
           title: "Clothing Shop Website",
           description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
           tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
           image: "/cover4.png",
-          live: 'http://ceylonfashionhub.rf.gd/'
+          live: 'http://ceylonfashionhub.rf.gd'
         },
         {
           title: "Clothing Shop Website",
@@ -213,20 +222,18 @@ function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <TabList className="flex space-x-4 p-2 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20">
-              {projectCategories.map((category) => (
-                <Tab
-                  key={category.title}
-                  className="cursor-pointer px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors whitespace-nowrap text-sm md:text-base focus:outline-none"
-                  selectedClassName="!bg-accent !text-gray-900"
-                >
-                  {category.title}
-                </Tab>
-              ))}
-            </TabList>
+           <TabList className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20 cursor-pointer">
+            {projectCategories.map((category) => (
+              <Tab
+                key={category.title}
+                className="w-[110px] sm:w-auto text-center px-2 sm:px-6 py-2 rounded-full text-xs sm:text-sm md:text-base text-gray-300 hover:text-white transition-colors whitespace-nowrap focus:outline-none"
+                selectedClassName="!bg-accent !text-gray-900"
+              >
+                {category.title}
+              </Tab>
+            ))}
+          </TabList>
           </motion.div>
-
-
           {projectCategories.map((category) => (
             <TabPanel key={category.title} className="relative">
               {showLeftArrow && (
