@@ -9,6 +9,7 @@ import cmsproj from '../assets/cmsproj.png';
 import cryptoproj from '../assets/cryptoproj.png';
 import businessconsproj from '../assets/businessconsproj.png';
 import travelproj from '../assets/travelproj.png';
+import usermangeproj from '../assets/usermangeproj.png';
 
 function Projects() {
   const { scrollY } = useScroll();
@@ -46,6 +47,14 @@ function Projects() {
           image: cmsproj,
           github: 'https://github.com/Yasintha8/cleaning-service-management-system-frontend.git',
           live: 'https://smartcare-cleaningservice.vercel.app'
+        },
+        {
+          title:"User Management System",
+          description: "Full-Stack User Management System - This System allows users, to add sub-users , Upload PDFs and Images.The system ensures strong authentication, and efficient file and data management.",
+          tech: ["React", "Node.js", "MongoDB", "Express"],
+          image: usermangeproj,
+          github: 'https://github.com/Yasintha8/portfolio-website.git',
+          live: 'https://user-management-system-v1.vercel.app'
         },
         {
           title: "Netflix Clone",
