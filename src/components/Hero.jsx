@@ -125,7 +125,7 @@ function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="https://drive.google.com/file/d/1wNkWfSQkp941EVR0fiXj1FMf0F_oFLcl/view?usp=sharing"
+                href="https://drive.google.com/file/d/12ms_vuDf0sfEJnWV6v8P2iuZvUIIzpfk/view?usp=sharing" target="_blank" rel="noopener noreferrer"
                 download
                 className="btn-primary bg-accent hover:bg-accent/90 hover: text-gray-900 px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
