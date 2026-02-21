@@ -1,12 +1,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { GithubIcon, LinkedinIcon} from 'lucide-react';
-import profileimg from '../assets/profileimg.png';
+import { GithubIcon, LinkedinIcon } from 'lucide-react';
+// import profileimg from '../assets/profileimg.png';
+import myprofileimg from '../assets/myprofileimg.Jpg';
 
 function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
-  
+
   const floatingElements = {
     initial: { y: 0 },
     animate: {
@@ -115,7 +116,7 @@ function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              I’m a dedicated Full Stack Developer with a strong foundation in the MERN stack, focused on delivering scalable, user-centric web applications. 
+              I’m a dedicated Full Stack Developer with a strong foundation in the MERN stack, focused on delivering scalable, user-centric web applications.
             </motion.p>
 
             <motion.div
@@ -133,18 +134,18 @@ function Hero() {
               >
                 Download CV
               </motion.a>
-                <button>
-                  <a href="#contact">
-                    <motion.button
-                      className="btn-primary bg-transparent border-2 border-accent text-accent hover:bg-accent/90 hover:text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Contact Me
-                    </motion.button>
-                  </a>
-                </button>
-              
+              <button>
+                <a href="#contact">
+                  <motion.button
+                    className="btn-primary bg-transparent border-2 border-accent text-accent hover:bg-accent/90 hover:text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Contact Me
+                  </motion.button>
+                </a>
+              </button>
+
             </motion.div>
             <motion.div
               className="flex gap-6 mt-8"
@@ -192,14 +193,14 @@ function Hero() {
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
-              
+
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.img
-                  src={profileimg}
+                  src={myprofileimg}
                   alt="Profile"
                   className="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover shadow-xl"
                   initial={{ opacity: 0 }}
