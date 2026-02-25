@@ -1,8 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-// import profileimg from '../assets/profileimg.png';
-import myprofileimg from '../assets/myprofileimg.Jpg';
+import profile_image from '../assets/profile_image.webp';
 
 function Hero() {
   const { scrollY } = useScroll();
@@ -202,7 +201,7 @@ function Hero() {
                 transition={{ duration: 0.3 }}
               >
                 <motion.img
-                  src={myprofileimg}
+                  src={profile_image}
                   alt="Profile"
                   className="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover shadow-xl"
                   initial={{ opacity: 0 }}
