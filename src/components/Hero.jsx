@@ -100,6 +100,8 @@ function Hero() {
                   2000,
                   'MERN Stack Developer',
                   2000,
+                  'Wordpress Developer',
+                  2000,
                   'UI/UX Designer',
                   2000,
                 ]}
@@ -116,7 +118,7 @@ function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              I’m a dedicated Full Stack Developer with a strong foundation in the MERN stack, focused on delivering scalable, user-centric web applications.
+              Software Engineering Undergraduate | Full Stack Engineer
             </motion.p>
 
             <motion.div

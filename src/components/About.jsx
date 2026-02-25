@@ -5,7 +5,7 @@ function About() {
   const { scrollY } = useScroll();
   // eslint-disable-next-line no-unused-vars
   const opacity = useTransform(scrollY, [0, 200], [0, 1]);
-  
+
   const skills = [
     { icon: Code, label: "Web Development", color: "text-blue-400" },
     { icon: Palette, label: "UI/UX Design", color: "text-purple-400" },
@@ -85,11 +85,11 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-gray-300 max-w-2xl mx-auto text-lg"
+            className="text-gray-300 max-w-3xl mx-auto text-lg"
           >
-            I am a passionate undergraduate software engineer at NSBM Green University,
-            specializing in full-stack development and UI/UX design. Currently seeking
-            internship opportunities to apply and expand my skills.
+            I am a final-year Software Engineering undergraduate at NSBM Green University with hands-on experience in full-stack
+            development and advanced WordPress solutions. I focus on building scalable, high-performance web applications and am
+            currently seeking internship opportunities to further apply and expand my technical expertise.
           </motion.p>
         </motion.div>
 
@@ -111,9 +111,8 @@ function About() {
               <h3 className="text-xl font-semibold text-white">Education Journey</h3>
             </div>
             <p className="text-gray-300">
-              Currently pursuing my degree in Software Engineering at NSBM Green University,
-              where I am developing a strong foundation in both technical and design aspects
-              of software development.
+              Final-year Software Engineering undergraduate at NSBM Green University, with hands-on industry experience gained through a
+              6-month internship, building strong expertise in software architecture and scalable web technologies.
             </p>
           </motion.div>
 
@@ -128,8 +127,8 @@ function About() {
               <h3 className="text-xl font-semibold text-white">Career Aspirations</h3>
             </div>
             <p className="text-gray-300">
-              Seeking an internship opportunity where I can contribute my full-stack development
-              and UI/UX design skills while learning from experienced professionals in the field.
+              To secure a full-time software engineering role where I can apply my expertise in full-stack and advanced WordPress
+              development to build scalable, high-performance web applications while continuously growing as an engineer.
             </p>
           </motion.div>
         </motion.div>

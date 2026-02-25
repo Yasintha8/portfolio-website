@@ -1,15 +1,15 @@
 import { motion, useScroll, useTransform, } from 'framer-motion';
-import { SiNodedotjs, SiExpress, SiMongodb, SiGraphql, SiDocker,SiFirebase,SiFigma,SiHtml5,SiJavascript,SiReact,SiTypescript,SiPostgresql,SiGithub,SiVercel,SiGithubactions} 
+import { SiNodedotjs, SiExpress, SiMongodb, SiGraphql, SiDocker, SiFirebase, SiFigma, SiHtml5, SiJavascript, SiReact, SiTypescript, SiPostgresql, SiGithub, SiVercel, SiGithubactions }
   from 'react-icons/si';
-import { 
-  Code2, 
-  Palette, 
-  Database, 
+import {
+  Code2,
+  Palette,
+  Database,
   Layout,
   Server,
   PenTool,
   Monitor,
-  FileText, 
+  FileText,
   Home,
   Rocket,
 } from 'lucide-react';
@@ -28,7 +28,8 @@ function Skills() {
         { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-400" },
         { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
         { name: "React", icon: SiReact, color: "text-blue-400" },
-        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" }
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+        { name: "Responsive & Performance Optimization", icon: Code2, color: "text-green-400" }
       ]
     },
     {
@@ -37,7 +38,7 @@ function Skills() {
       skills: [
         { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
         { name: "Express.js", icon: SiExpress, color: "text-gray-400" },
-        { name: "RESTful APIs", icon: FiLink2, color: "text-purple-400" }
+        { name: "RESTful APIs", icon: FiLink2, color: "text-purple-400" },
       ]
     },
     {
@@ -58,7 +59,7 @@ function Skills() {
         { name: "Netlify / Vercel", icon: SiVercel, color: "text-blue-500" },
         { name: "Docker", icon: SiDocker, color: "text-cyan-500" },
         { name: "CI/CD", icon: SiGithubactions, color: "text-indigo-400" }
-  ]
+      ]
     },
     {
       title: "UI/UX Design",
@@ -183,15 +184,14 @@ function Skills() {
               variants={cardVariants}
               custom={index}
               whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              className={`${
-                category.title === "WordPress Development" ? "justify-center" : ""
-              } bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors`}
+              className={`${category.title === "WordPress Development" ? "justify-center" : ""
+                } bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors`}
             >
               <div className="flex items-center mb-6">
                 <category.icon className="w-8 h-8 text-accent mr-3" />
                 <h3 className="text-xl font-semibold text-white">{category.title}</h3>
               </div>
-              
+
               <div className="space-y-4">
                 {category.skills.map((skill) => (
                   <motion.div
