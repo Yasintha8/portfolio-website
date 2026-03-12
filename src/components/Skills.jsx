@@ -12,6 +12,11 @@ import {
   FileText,
   Home,
   Rocket,
+  Smartphone,
+  ShieldCheck,
+  LayoutList,
+  SlidersHorizontal,
+  Zap
 } from 'lucide-react';
 import { FiLink2 } from 'react-icons/fi';
 
@@ -29,7 +34,7 @@ function Skills() {
         { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
         { name: "React", icon: SiReact, color: "text-blue-400" },
         { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-        { name: "Responsive & Performance Optimization", icon: Code2, color: "text-green-400" }
+        { name: "Responsive & Performance Optimization", icon: Smartphone, color: "text-green-400" }
       ]
     },
     {
@@ -39,6 +44,7 @@ function Skills() {
         { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
         { name: "Express.js", icon: SiExpress, color: "text-gray-400" },
         { name: "RESTful APIs", icon: FiLink2, color: "text-purple-400" },
+        { name: "Authentication & Security", icon: ShieldCheck, color: "text-red-400" }
       ]
     },
     {
@@ -67,7 +73,7 @@ function Skills() {
       skills: [
         { name: "Figma", icon: SiFigma, color: "text-pink-400" },
         { name: "Wireframing", icon: PenTool, color: "text-blue-400" },
-        { name: "Prototyping", icon: Monitor, color: "text-indigo-400" }
+        { name: "User-Centered Design", icon: Monitor, color: "text-indigo-400" }
       ]
     },
     {
@@ -75,8 +81,10 @@ function Skills() {
       icon: Home,
       skills: [
         { name: "Theme Development", icon: FileText, color: "text-indigo-500" },
-        { name: "Custom Post Types", icon: Database, color: "text-green-400" },
-        { name: "WooCommerce Integration", icon: Server, color: "text-orange-500" }
+        { name: "Custom Post Types", icon: LayoutList, color: "text-green-400" },
+        { name: "WooCommerce Integration", icon: Server, color: "text-orange-500" },
+        { name: "Advanced Custom Fields", icon: SlidersHorizontal, color: "text-blue-400" },
+        { name: "Performance Optimization", icon: Zap, color: "text-yellow-400" }
       ]
     }
   ];
