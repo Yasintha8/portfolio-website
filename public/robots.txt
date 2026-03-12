@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yasintha-chamikara.vercel.app/sitemap.xml
