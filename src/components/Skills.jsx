@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, } from 'framer-motion';
-import { SiNodedotjs, SiExpress, SiMongodb, SiGraphql, SiDocker, SiFirebase, SiFigma, SiHtml5, SiJavascript, SiReact, SiTypescript, SiPostgresql, SiGithub, SiVercel, SiGithubactions }
+import { SiNodedotjs, SiExpress, SiMongodb, SiGraphql, SiDocker, SiFirebase, SiFigma, SiHtml5, SiJavascript, SiReact, SiTypescript, SiPostgresql, SiGithub, SiVercel, SiGithubactions, }
   from 'react-icons/si';
+import { FaAws } from "react-icons/fa";
 import {
   Code2,
   Palette,
@@ -63,6 +64,7 @@ function Skills() {
       skills: [
         { name: "Git & GitHub", icon: SiGithub, color: "text-gray-500" },
         { name: "Netlify / Vercel", icon: SiVercel, color: "text-blue-500" },
+        { name: "AWS", icon: FaAws, color: "text-orange-400" },
         { name: "Docker", icon: SiDocker, color: "text-cyan-500" },
         { name: "CI/CD", icon: SiGithubactions, color: "text-indigo-400" }
       ]
@@ -82,8 +84,8 @@ function Skills() {
       skills: [
         { name: "Theme Development", icon: FileText, color: "text-indigo-500" },
         { name: "Custom Post Types", icon: LayoutList, color: "text-green-400" },
-        { name: "WooCommerce Integration", icon: Server, color: "text-orange-500" },
         { name: "Advanced Custom Fields", icon: SlidersHorizontal, color: "text-blue-400" },
+        { name: "WooCommerce Integration", icon: Server, color: "text-orange-500" },
         { name: "Performance Optimization", icon: Zap, color: "text-yellow-400" }
       ]
     }

@@ -101,8 +101,6 @@ function Hero() {
                   2000,
                   'Wordpress Developer',
                   2000,
-                  'UI/UX Designer',
-                  2000,
                 ]}
                 wrapper="span"
                 speed={50}
@@ -117,7 +115,7 @@ function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Software Engineering Undergraduate | Full Stack Engineer
+              Software Engineering Undergraduate | Full Stack Web Developer
             </motion.p>
 
             <motion.div

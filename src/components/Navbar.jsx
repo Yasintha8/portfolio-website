@@ -28,39 +28,37 @@ function Navbar({ activeSection, setActiveSection }) {
     activeSection: PropTypes.string.isRequired,
     setActiveSection: PropTypes.func.isRequired,
   };
-  
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-  scrolled ? 'backdrop-blur-lg shadow-lg' : 'bg-transparent'
-}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        }`}
 
     >
       <div className="container mx-auto px-4 py-4 sm:px-20">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-3xl font-bold text-accent mr-10 cursor-pointer"
-            >
-              <span className="text-white text-4xl" >&lt;</span>
-              YC
-              <span className="text-white text-4xl">/&gt;</span>
-            </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-3xl font-bold text-accent mr-10 cursor-pointer"
+          >
+            <span className="text-white text-4xl" >&lt;</span>
+            YC
+            <span className="text-white text-4xl">/&gt;</span>
+          </motion.div>
 
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'].map((item) => (
+            {['Home', 'About Me', 'Experience', 'Skills', 'Projects', 'Education', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`hover:text-accent transition-colors ${
-                  activeSection === item.toLowerCase() ? 'text-accent' : 'text-textLight'
-                }`}
+                className={`hover:text-accent transition-colors ${activeSection === item.toLowerCase() ? 'text-accent' : 'text-textLight'
+                  }`}
               >
                 {item}
               </button>
@@ -101,13 +99,12 @@ function Navbar({ activeSection, setActiveSection }) {
             className="md:hidden absolute top-full left-0 w-full bg-secondary shadow-lg"
           >
             <div className="flex flex-col items-center py-4 space-y-4">
-              {['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'].map((item) => (
+              {['Home', 'About Me', 'Experience', 'Skills', 'Projects', 'Education', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
-                  className={`hover:text-accent transition-colors text-lg ${
-                    activeSection === item.toLowerCase() ? 'text-accent' : 'text-textLight'
-                  }`}
+                  className={`hover:text-accent transition-colors text-lg ${activeSection === item.toLowerCase() ? 'text-accent' : 'text-textLight'
+                    }`}
                 >
                   {item}
                 </button>

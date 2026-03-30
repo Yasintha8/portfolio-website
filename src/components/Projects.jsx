@@ -22,7 +22,7 @@ function Projects() {
 
   const projectCategories = [
     {
-      title: "Web Development",
+      title: "Web Applications",
       projects: [
         {
           title: "E-commerce Web Application",
@@ -49,7 +49,7 @@ function Projects() {
           live: 'https://smartcare-cleaningservice.vercel.app'
         },
         {
-          title:"User Management System",
+          title: "User Management System",
           description: "Full-Stack User Management System - This System allows users, to add sub-users , Upload PDFs and Images.The system ensures strong authentication, and efficient file and data management.",
           tech: ["React", "Node.js", "MongoDB", "Express"],
           image: usermangeproj,
@@ -91,6 +91,32 @@ function Projects() {
       ]
     },
     {
+      title: "WordPress Development",
+      projects: [
+        {
+          title: "Senrendib Heritage Tours Website",
+          description: "A modern WordPress tourism website redesign for Senrendib Heritage Tours.",
+          tech: ["WordPress", "PHP", "Astra Theme", "CPT", "ACF"],
+          image: "/cover6.webp",
+          live: 'https://senrendibheritagetours.great-site.net'
+        },
+        {
+          title: "Clothing Shop Website",
+          description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
+          tech: ["WordPress", "PHP", "Astra Theme", "WooCommerce"],
+          image: "/cover4.png",
+          live: 'http://ceylonfashionhub.rf.gd'
+        },
+        {
+          title: "Clothing Shop Website",
+          description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
+          tech: ["WordPress", "PHP", "Astra Theme", "WooCommerce"],
+          image: "/cover5.png",
+          live: '#'
+        },
+      ]
+    },
+    {
       title: "UI/UX Design",
       projects: [
         {
@@ -109,35 +135,16 @@ function Projects() {
         }
       ]
     },
-    {
-      title: "WordPress Dev",
-      projects: [
-        {
-          title: "Clothing Shop Website",
-          description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
-          tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: "/cover4.png",
-          live: 'http://ceylonfashionhub.rf.gd'
-        },
-        {
-          title: "Clothing Shop Website",
-          description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
-          tech: ["WordPress", "PHP", "Custom Theme", "WooCommerce"],
-          image: "/cover5.png",
-          live: '#'
-        },
-      ]
-    }
   ];
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
       const scrollAmount = 300;
       const container = scrollContainerRef.current;
-      const newScrollLeft = direction === 'left' 
-        ? container.scrollLeft - scrollAmount 
+      const newScrollLeft = direction === 'left'
+        ? container.scrollLeft - scrollAmount
         : container.scrollLeft + scrollAmount;
-      
+
       container.scrollTo({
         left: newScrollLeft,
         behavior: 'smooth'
@@ -224,24 +231,32 @@ function Projects() {
           onSelect={index => setTabIndex(index)}
           className="relative"
         >
-          <motion.div 
+          <motion.div
             className="flex justify-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-           <TabList className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20 cursor-pointer">
-            {projectCategories.map((category) => (
-              <Tab
-                key={category.title}
-                className="w-[110px] sm:w-auto text-center px-2 sm:px-6 py-2 rounded-full text-xs sm:text-sm md:text-base text-gray-300 hover:text-white transition-colors whitespace-nowrap focus:outline-none"
-                selectedClassName="!bg-accent !text-gray-900"
-              >
-                {category.title}
-              </Tab>
-            ))}
-          </TabList>
+            <TabList className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-full border border-accent/20 cursor-pointer">
+              {projectCategories.map((category) => (
+                <Tab
+                  key={category.title}
+                  className="w-[110px] sm:w-auto text-center px-2 sm:px-6 py-2 rounded-full text-xs sm:text-sm md:text-base text-gray-300 hover:text-accent transition-colors whitespace-nowrap focus:outline-none"
+                  selectedClassName="!bg-accent !text-gray-900"
+                >
+                  <span className="sm:hidden">
+                    {category.title === "WordPress Development"
+                      ? "WordPress"
+                      : category.title}
+                  </span>
+
+                  <span className="hidden sm:inline">
+                    {category.title}
+                  </span>
+                </Tab>
+              ))}
+            </TabList>
           </motion.div>
           {projectCategories.map((category) => (
             <TabPanel key={category.title} className="relative">
@@ -255,7 +270,7 @@ function Projects() {
                   <ChevronLeft className="text-white w-6 h-6" />
                 </motion.button>
               )}
-              
+
               {showRightArrow && (
                 <motion.button
                   initial={{ opacity: 0, x: -20 }}
@@ -273,56 +288,56 @@ function Projects() {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {category.projects.map((project, index) => (
-                 <motion.div
-                      key={project.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl border-2 border-accent/20 hover:border-accent/40 transition-colors overflow-hidden shadow-lg snap-start flex-shrink-0"
-                    >
-                      <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                      <div className="p-5">
-                        <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
-                        <p className="text-gray-400 text-sm mb-3">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tech.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex space-x-4 pt-2 border-t border-white/10">
-                            {category.title === "Web Development" && (
-                              <motion.a
-                                href={project.github}
-                                className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <Github className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
-                                Code
-                              </motion.a>
-                            )}
-                            <motion.a
-                              href={project.live}
-                              className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              <ExternalLink className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
-                              Live Demo
-                            </motion.a>
-                          </div>
-                  </div>
-                </motion.div>
+                  <motion.div
+                    key={project.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl border-2 border-accent/20 hover:border-accent/40 transition-colors overflow-hidden shadow-lg snap-start flex-shrink-0"
+                  >
+                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                    <div className="p-5">
+                      <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
+                      <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tech.map((tech, idx) => (
+                          <span
+                            key={idx}
+                            className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex space-x-4 pt-2 border-t border-white/10">
+                        {category.title === "Web Development" && (
+                          <motion.a
+                            href={project.github}
+                            className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Github className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
+                            Code
+                          </motion.a>
+                        )}
+                        <motion.a
+                          href={project.live}
+                          className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-1 group-hover:rotate-12 transition-transform" />
+                          Live Demo
+                        </motion.a>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </TabPanel>
