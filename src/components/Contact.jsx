@@ -33,39 +33,64 @@ function Contact() {
   return (
     <section id="contact" className="min-h-screen mx-auto px-6 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute h-1 w-1 bg-accent/20 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [1, 2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="section-heading text-4xl md:text-5xl text-center">Contact <span className="text-accent">Me</span></h2>
-        <p className="section-subheading text-center text-sm md:text-base">
-          Lets discuss how we can work together
-        </p>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute h-1 w-1 bg-accent/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [1, 2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+      <div className="container mx-auto relative z-10 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Contact <span className="text-accent">Me</span>
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-gray-300 max-w-2xl mx-auto text-lg"
+          >
+            Lets discuss how we can work together
+          </motion.p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6  md:gap-8 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto"
+        >
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,9 +101,9 @@ function Contact() {
             <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaEnvelope className="text-xl text-accent" />
               <div className="text-center  sm:text-left">
-              <h3 className="text-left sm:text-lg font-semibold">Email</h3>
-              <p className="text-sm sm:text-base text-text break-all">yasintha.chamikara.way@gmail.com</p>
-            </div>
+                <h3 className="text-left sm:text-lg font-semibold">Email</h3>
+                <p className="text-sm sm:text-base text-text break-all">yasintha.chamikara.way@gmail.com</p>
+              </div>
             </div>
             <div className="card flex items-center space-x-3 bg-white/5 backdrop-blur-sm p-8 border border-accent/20 hover:border-accent/40">
               <FaPhone className="text-2xl text-accent" />
@@ -118,7 +143,7 @@ function Contact() {
               <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
               <input
                 type="email"
-                name="email" 
+                name="email"
                 id="email"
                 className="form-input"
                 placeholder="Your email"
@@ -143,9 +168,8 @@ function Contact() {
               {result ? result : "Send Message"}
             </button>
           </motion.form>
-        </div>
-      </motion.div>
-      
+        </motion.div>
+      </div>
     </section>
   );
 }

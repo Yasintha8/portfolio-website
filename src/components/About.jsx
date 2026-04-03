@@ -85,11 +85,9 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-gray-300 max-w-3xl mx-auto text-lg"
+            className="text-gray-300 max-w-2xl mx-auto text-lg"
           >
-            I am a final-year Software Engineering undergraduate at NSBM Green University with hands-on experience in full-stack
-            development and advanced WordPress solutions. I focus on building scalable, high-performance web applications and am
-            currently seeking internship opportunities to further apply and expand my technical expertise.
+            A passionate software engineer building scalable web experiences
           </motion.p>
         </motion.div>
 
@@ -98,37 +96,50 @@ function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 mb-16"
+          className="grid md:grid-cols-3 gap-8 mb-16"
         >
           <motion.div
             variants={cardVariants}
             custom={0}
-            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
-            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/50 transition-all duration-300 flex flex-col shadow-lg"
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
             <div className="flex items-center mb-4">
-              <GraduationCap className="w-8 h-8 text-accent mr-3" />
-              <h3 className="text-xl font-semibold text-white">Education Journey</h3>
+              <Code className="w-8 h-8 text-accent mr-3" />
+              <h3 className="text-xl font-semibold text-white">Who I Am</h3>
             </div>
-            <p className="text-gray-300">
-              Final-year Software Engineering undergraduate at NSBM Green University, with hands-on industry experience gained through a
-              6-month internship, building strong expertise in software architecture and scalable web technologies.
+            <p className="text-gray-300 text-sm leading-relaxed flex-grow">
+              I am a final-year Software Engineering undergraduate at NSBM Green University with hands-on experience in full-stack development. I focus on building elegant, high-performance web applications.
             </p>
           </motion.div>
 
           <motion.div
             variants={cardVariants}
             custom={1}
-            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
-            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/50 transition-all duration-300 flex flex-col shadow-lg"
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          >
+            <div className="flex items-center mb-4">
+              <GraduationCap className="w-8 h-8 text-accent mr-3" />
+              <h3 className="text-xl font-semibold text-white">My Journey</h3>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed flex-grow">
+              Combining my academic foundation with a 6-month industry internship, I've built strong expertise in software architecture, problem-solving, and developing scalable web technologies.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={cardVariants}
+            custom={2}
+            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/50 transition-all duration-300 flex flex-col shadow-lg"
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
             <div className="flex items-center mb-4">
               <Briefcase className="w-8 h-8 text-accent mr-3" />
-              <h3 className="text-xl font-semibold text-white">Career Aspirations</h3>
+              <h3 className="text-xl font-semibold text-white">Aspirations</h3>
             </div>
-            <p className="text-gray-300">
-              To secure a full-time software engineering role where I can apply my expertise in full-stack and advanced WordPress
-              development to build scalable, high-performance web applications while continuously growing as an engineer.
+            <p className="text-gray-300 text-sm leading-relaxed flex-grow">
+              Actively seeking full-time opportunities where I can apply my expertise in full-stack and modern web development to build robust applications while continuously growing as a technical professional.
             </p>
           </motion.div>
         </motion.div>

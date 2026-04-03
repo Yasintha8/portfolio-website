@@ -15,12 +15,12 @@ function Education() {
   const desktopScrollContainerRef = useRef(null);
 
   const certificates = [
-    { title: "Python For Beginners", provider: "Moratuwa Campus", year: "2025" , image: cert1, link: "https://drive.google.com/file/d/165-qpg2N3TmPRxmdOdAM08KRLr43-yqc/view?usp=sharing" },
+    { title: "Python For Beginners", provider: "Moratuwa Campus", year: "2025", image: cert1, link: "https://drive.google.com/file/d/165-qpg2N3TmPRxmdOdAM08KRLr43-yqc/view?usp=sharing" },
     { title: "React Course", provider: "Dp Educationa", year: "2025", image: cert5, link: "https://drive.google.com/file/d/1Zh2vD9wBfIqHM0hCxMTPuuKYqKhDhdjK/view?usp=sharing" },
     { title: "React Essentials Traing", provider: "Linkedln", year: "2025", image: cert2, link: "https://www.linkedin.com/learning/certificates/f82999aa63f531d376fb275efe7d82e2de93d116a6e95d44be21efd01ffebe61" },
     { title: "MERN Full-Stack Development", provider: "Simplilearn", year: "2025", image: cert3, link: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzM3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg4OTU4MF84MjEzMDE2MTczOTI1MTQ3MzczNS5wbmciLCJ1c2VybmFtZSI6Illhc2ludGhhIENoYW1pa2FyYSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6129%2FIntroduction-to-MERN-Stack%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1427705797152106546&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVt8jOSncPTC0MCUyyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAMlGy1RBAAAA" },
-    { title: "React.js Code Challenges", provider: "Linkedln", year: "2025", image: cert2, link: "https://www.linkedin.com/learning/certificates/78582b7068a2b0917a9007da36cf97941282b3fabc12ff743050a5a3059ce37d"},
-    { title: "Introduction to Generative AI", provider: "Google", year: "2025", image: cert4, link: "https://www.cloudskillsboost.google/public_profiles/af922dc8-ca0b-4167-994a-bf117fd92241/badges/13500769?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"},
+    { title: "React.js Code Challenges", provider: "Linkedln", year: "2025", image: cert2, link: "https://www.linkedin.com/learning/certificates/78582b7068a2b0917a9007da36cf97941282b3fabc12ff743050a5a3059ce37d" },
+    { title: "Introduction to Generative AI", provider: "Google", year: "2025", image: cert4, link: "https://www.cloudskillsboost.google/public_profiles/af922dc8-ca0b-4167-994a-bf117fd92241/badges/13500769?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" },
     { title: "DP Figma Course", provider: "DP Education", year: "2025", image: cert5, link: "https://drive.google.com/file/d/1qv18J1X1p_2AbMssF1itj--a4a27Ie8o/view?usp=sharing" },
     { title: "Web Design Using WordPress", provider: "SuhuruSara", year: "2024", image: cert7, link: "https://drive.google.com/file/d/1mZg5VRQds4JYHkw00MbtPNpn9Z0w468e/view?usp=sharing" },
     { title: "Database Management", provider: "SuhuruSara", year: "2024", image: cert7, link: "https://drive.google.com/file/d/1evpX1Lw5k0n_5d6OckcfmRNqL-vC4zbt/view?usp=sharing" },
@@ -61,184 +61,209 @@ function Education() {
           />
         ))}
       </div>
-      {/* Mobile View */}
-      <div className="md:hidden">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-[500px] mx-auto px-6 "
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-2">Education & <span className="text-accent">Certificates</span></h2>
-          <p className="text-center text-sm text-gray-600 mb-8">
-            My academic journey and achievements
-          </p>
-
-          {/* Degree Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
+            className="inline-block"
           >
-            <h3 className="text-xl font-bold mb-2 text-accent">
-              🎓 BSc (Hons) in Software Engineering
-            </h3>
-            <div className="flex items-center mb-2">
-              <img src={campuslogo} alt="NSBM Logo" className="w-8 h-8 mr-2" />
-              <span className="font-medium text-sm">NSBM Green University</span>
-            </div>
-            <p className="text-sm text-gray-500 mb-3">2020 - Present</p>
-            <ul className="text-sm space-y-1">
-              <li>⚡ Specialized in Full-stack Development</li>
-              <li>🎨 Focus on UI/UX Design principles</li>
-              <li>📚 Relevant coursework in Software Engineering</li>
-            </ul>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Education & <span className="text-accent">Certificates</span>
+            </h2>
           </motion.div>
-
-          {/* Certificates Section */}
-          <div className="relative">
-            <h3 className="text-xl font-bold mb-4 text-accent mt-4">📜 Certificates</h3>
-            
-            {/* Scroll Buttons */}
-            <button 
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-2 rounded-full shadow-md"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button 
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-2 rounded-full shadow-md"
-            >
-              <ChevronRight size={20} />
-            </button>
-
-            {/* Certificates Container */}
-            <div 
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto scrollbar-hide gap-4 pb-4 px-2 -mx-2 snap-x snap-mandatory"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {certificates.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex-none w-[250px] snap-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
-                >
-                  <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2 mx-auto" />
-                  <h4 className="text-base font-semibold text-center mb-1">{cert.title}</h4>
-                  <p className="text-xs text-gray-500 text-center mb-3">{cert.provider} - {cert.year}</p>
-                  <button 
-                    onClick={() => window.open(cert.link, '_blank')}
-                    className="w-full bg-accent text-primary text-sm py-2 rounded-lg hover:bg-accentDark transition"
-                  >
-                    View Certificate
-                  </button>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Desktop View */}
-      <div className="hidden md:block">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="section-heading text-4xl md:text-5xl text-center">Education & <span className="text-accent">Certificates</span></h2>
-          <p className="section-subheading text-center text-sm md:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-gray-300 max-w-2xl mx-auto text-lg"
+          >
             My academic journey and achievements
-          </p>
+          </motion.p>
+        </motion.div>
 
-          <div className="max-w-6xl mx-auto">
+        {/* Mobile View */}
+        <div className="md:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-[500px] mx-auto"
+          >
+
             {/* Degree Section */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
               className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
             >
-              <h3 className="text-2xl font-bold text-accent mb-2">
-                🎓 BSc (Hons) in Software Engineering
+              <h3 className="text-xl font-bold mb-2 text-accent">
+                BSc (Hons) in Software Engineering
               </h3>
-              <p className="text-text mb-2 flex items-center">
-                <img src={campuslogo} alt="NSBM Logo" className="w-10 h-10 mr-2" />
-                <span className="font-medium">NSBM Green University</span>
-              </p>
-              <p className="mb-4 font-semibold text-gray-400">2022 - Present</p>
-              <ul className="list-disc list-inside text-text space-y-2">
-                <li>⚡ Specialized in Full-stack Development</li>
-                <li>🎨 Focus on UI/UX Design principles</li>
-                <li>📚 Relevant coursework in Software Engineering practices</li>
+              <div className="flex items-center mb-2">
+                <img src={campuslogo} alt="NSBM Logo" className="w-8 h-8 mr-2" />
+                <span className="font-medium text-sm">NSBM Green University</span>
+              </div>
+              <p className="text-sm text-gray-500 mb-3">2020 - Present</p>
+              <ul className="text-sm space-y-1">
+                <li>Full-stack Development</li>
+                <li>Wordpress Specialist</li>
+                <li>Focus on UI/UX Design principles</li>
+                <li>Relevant coursework in Software Engineering</li>
               </ul>
             </motion.div>
 
             {/* Certificates Section */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors mt-4"
-            >
-              <h3 className="text-2xl font-bold text-accent mb-4">📜 Certificates</h3>
-              
-              {/* Desktop Scroll Buttons */}
-              <button 
-                onClick={() => scroll('left', false)}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-3 rounded-full shadow-md hover:bg-accentDark transition-colors"
+            <div className="relative">
+              <h3 className="text-xl font-bold mb-4 text-accent mt-4">Certificates</h3>
+
+              {/* Scroll Buttons */}
+              <button
+                onClick={() => scroll('left')}
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-2 rounded-full shadow-md"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={20} />
               </button>
-              <button 
-                onClick={() => scroll('right', false)}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80  text-primary p-3 rounded-full shadow-md hover:bg-accentDark transition-colors"
+              <button
+                onClick={() => scroll('right')}
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-2 rounded-full shadow-md"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={20} />
               </button>
 
-              <div 
-                ref={desktopScrollContainerRef}
-                className="overflow-x-auto scrollbar-hide"
+              {/* Certificates Container */}
+              <div
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto scrollbar-hide gap-4 pb-4 px-2 -mx-2 snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
-                <div className="flex gap-4 px-8">
-                  {certificates.map((cert, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.2 }}
-                      viewport={{ once: true }}
-                      className="flex-none w-[300px] flex flex-col items-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
+                {certificates.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex-none w-[250px] snap-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
+                  >
+                    <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2 mx-auto" />
+                    <h4 className="text-base font-semibold text-center mb-1">{cert.title}</h4>
+                    <p className="text-xs text-gray-500 text-center mb-3">{cert.provider} - {cert.year}</p>
+                    <button
+                      onClick={() => window.open(cert.link, '_blank')}
+                      className="w-full bg-accent text-primary text-sm py-2 rounded-lg hover:bg-accentDark transition"
                     >
-                      <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2" />
-                      <h4 className="text-lg font-semibold text-center">{cert.title}</h4>
-                      <p className="text-sm text-gray-400">{cert.provider} - {cert.year}</p>
-                      <button 
-                        onClick={() => window.open(cert.link, '_blank')} 
-                        className="mt-3 bg-accent text-primary px-4 py-2 rounded-lg hover:bg-accentDark transition"
-                      >
-                        View Certificate
-                      </button>
-                    </motion.div>
-                  ))}
-                </div>
+                      View Certificate
+                    </button>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Desktop View */}
+        <div className="hidden md:block">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+
+            <div className="max-w-6xl mx-auto">
+              {/* Degree Section */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors"
+              >
+                <h3 className="text-2xl font-bold text-accent mb-2">
+                  BSc (Hons) in Software Engineering
+                </h3>
+                <p className="text-text mb-2 flex items-center">
+                  <img src={campuslogo} alt="NSBM Logo" className="w-10 h-10 mr-2" />
+                  <span className="font-medium">NSBM Green University</span>
+                </p>
+                <p className="mb-4 font-semibold text-gray-400">2022 - Present</p>
+                <ul className="list-disc list-inside text-text space-y-2">
+                  <li>Full-stack Development</li>
+                  <li>Wordpress Specialist</li>
+                  <li>Focus on UI/UX Design principles</li>
+                  <li>Relevant coursework in Software Engineering practices</li>
+                </ul>
+              </motion.div>
+
+              {/* Certificates Section */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors mt-4"
+              >
+                <h3 className="text-2xl font-bold text-accent mb-4">Certificates</h3>
+
+                {/* Desktop Scroll Buttons */}
+                <button
+                  onClick={() => scroll('left', false)}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 text-primary p-3 rounded-full shadow-md hover:bg-accentDark transition-colors"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={() => scroll('right', false)}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80  text-primary p-3 rounded-full shadow-md hover:bg-accentDark transition-colors"
+                >
+                  <ChevronRight size={24} />
+                </button>
+
+                <div
+                  ref={desktopScrollContainerRef}
+                  className="overflow-x-auto scrollbar-hide"
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                  <div className="flex gap-4 px-8">
+                    {certificates.map((cert, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: index * 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex-none w-[300px] flex flex-col items-center bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-accent/20 hover:border-accent/40 transition-colors shadow-md"
+                      >
+                        <img src={cert.image} alt={cert.title} className="w-12 h-12 mb-2" />
+                        <h4 className="text-lg font-semibold text-center">{cert.title}</h4>
+                        <p className="text-sm text-gray-400">{cert.provider} - {cert.year}</p>
+                        <button
+                          onClick={() => window.open(cert.link, '_blank')}
+                          className="mt-3 bg-accent text-primary px-4 py-2 rounded-lg hover:bg-accentDark transition"
+                        >
+                          View Certificate
+                        </button>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
     </section>

@@ -67,7 +67,7 @@ function Projects() {
         {
           title: "Crypto Investment Site",
           description: "A showcase repository featuring various cryptocurrency investment plan packages. Built with React and Tailwind CSS, this project highlights different investment options.",
-          tech: ["React"],
+          tech: ["React", "Tailwind CSS"],
           image: cryptoproj,
           github: 'https://github.com/Yasintha8/crypto-investment-site',
           live: 'https://investmint-crypto.vercel.app'
@@ -75,7 +75,7 @@ function Projects() {
         {
           title: "Business Consultation Website",
           description: "Business Consultation Website - A modern, responsive frontend built with React and Tailwind CSS to showcase business consultation services. It features a clean and user-friendly design.",
-          tech: ["React"],
+          tech: ["React", "Tailwind CSS"],
           image: businessconsproj,
           github: 'https://github.com/Yasintha8/business-consultation-website',
           live: 'https://nextwave-solutions.vercel.app'
@@ -287,6 +287,8 @@ function Projects() {
                 className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory hide-scrollbar"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
+
+                {/*projects display*/}
                 {category.projects.map((project, index) => (
                   <motion.div
                     key={project.title}
@@ -294,10 +296,13 @@ function Projects() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="min-w-[300px] max-w-sm bg-gray-800 rounded-2xl border-2 border-accent/20 hover:border-accent/40 transition-colors overflow-hidden shadow-lg snap-start flex-shrink-0"
+                    className="group min-w-[300px] max-w-sm bg-gray-800 rounded-2xl border-2 border-accent/20 hover:border-accent/50 hover:bg-gray-800/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_2rem_-0.5rem_#000000] hover:shadow-accent/30 overflow-hidden snap-start flex-shrink-0"
                   >
-                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                    <div className="p-5">
+                    <div className="overflow-hidden relative">
+                      <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none"></div>
+                      <img src={project.image} alt={project.title} className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+                    </div>
+                    <div className="p-5 relative">
                       <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
                       <p className="text-gray-400 text-sm mb-3">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">

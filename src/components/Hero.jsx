@@ -97,8 +97,6 @@ function Hero() {
                 sequence={[
                   'Full Stack Web Developer',
                   2000,
-                  'MERN Stack Developer',
-                  2000,
                   'Wordpress Developer',
                   2000,
                 ]}
