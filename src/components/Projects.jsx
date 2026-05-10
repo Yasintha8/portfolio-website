@@ -133,14 +133,14 @@ function Projects() {
           title: "Interior Design Website",
           description: "A modern and elegant website design for an interior design company.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: "futurehomeui",
+          image: futurehomeui,
           live: 'https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=0Ut054lTamvvJeiu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671'
         },
         {
           title: "Railway Website - UI Redesign",
           description: "This is a redesign of a railway ticket booking website in sri lanka. - Group project.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: "railwayui",
+          image: railwayui,
           live: 'https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=19-3&starting-point-node-id=19%3A3&t=soMIx04z3RXWTo2d-1'
         }
       ]
