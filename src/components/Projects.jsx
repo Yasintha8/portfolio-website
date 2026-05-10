@@ -10,6 +10,16 @@ import cryptoproj from '../assets/cryptoproj.png';
 import businessconsproj from '../assets/businessconsproj.png';
 import travelproj from '../assets/travelproj.png';
 import usermangeproj from '../assets/usermangeproj.png';
+import wallartshop from '../assets/web-proj1.webp';
+import hotelbooking from '../assets/web-proj2.webp';
+import cleaningmgmt from '../assets/web-proj3.webp';
+import travelsite from '../assets/web-proj4.webp';
+import businessproj from '../assets/web-proj5.webp';
+import serandibproj from '../assets/cover6.webp';
+import cleaningproj from '../assets/wp2_cover.webp';
+import futurehomeui from '../assets/cover1.png';
+import railwayui from '../assets/cover3.png';
+import { title } from 'framer-motion/client';
 
 function Projects() {
   const { scrollY } = useScroll();
@@ -28,7 +38,7 @@ function Projects() {
           title: "E-commerce Web Application",
           description: "Full Stack Wall Art Selling Shop web application - It enables users to sell wall arts, and allows the admin to manage products, orders, and users via a dedicated admin panel.",
           tech: ["React", "Node.js", "MongoDB ", "Express"],
-          image: ecomproj,
+          image: wallartshop,
           github: 'https://github.com/Yasintha8/wall-art-selling-shop-frontend.git',
           live: 'https://vibecanvas-wallart-selling-shop.vercel.app'
         },
@@ -36,7 +46,7 @@ function Projects() {
           title: "Hotel Booking Web Application",
           description: "Full-Stack Hotel Booking Web Application. The application allows users to browse hotels and rooms, make secure bookings, and hotel owners to manage listings.payments are processed using Stripe.",
           tech: ["React", "Node.js", "MongoDB ", "Express"],
-          image: hotelproj,
+          image: hotelbooking,
           github: 'https://github.com/Yasintha8/hotel-booking-web-app.git',
           live: 'https://staysure.vercel.app'
         },
@@ -44,7 +54,7 @@ function Projects() {
           title: "Cleaning Management System",
           description: "Full-Stack Cleaning Management System - It enables users to book cleaning services, manage their bookings, and allows the admin to manage services and users via a dedicated admin panel.",
           tech: ["React", "Node.js", "MongoDB", "Express"],
-          image: cmsproj,
+          image: cleaningmgmt,
           github: 'https://github.com/Yasintha8/cleaning-service-management-system-frontend.git',
           live: 'https://smartcare-cleaningservice.vercel.app'
         },
@@ -76,7 +86,7 @@ function Projects() {
           title: "Business Consultation Website",
           description: "Business Consultation Website - A modern, responsive frontend built with React and Tailwind CSS to showcase business consultation services. It features a clean and user-friendly design.",
           tech: ["React", "Tailwind CSS"],
-          image: businessconsproj,
+          image: businessproj,
           github: 'https://github.com/Yasintha8/business-consultation-website',
           live: 'https://nextwave-solutions.vercel.app'
         },
@@ -84,7 +94,7 @@ function Projects() {
           title: "Tour and Travel Website",
           description: "Tour and Travel Website - A responsive and engaging website built using HTML, CSS, and JavaScript to showcase travel destinations and services. It features a clean and user-friendly design.",
           tech: ["HTML", "CSS", "JavaScript"],
-          image: travelproj,
+          image: travelsite,
           github: 'https://github.com/Yasintha8/tour-and-travel-website',
           live: 'https://yasintha8.github.io/tour-and-travel-website'
         }
@@ -97,23 +107,23 @@ function Projects() {
           title: "Senrendib Heritage Tours Website",
           description: "A modern WordPress tourism website redesign for Senrendib Heritage Tours.",
           tech: ["WordPress", "PHP", "Astra Theme", "CPT", "ACF"],
-          image: "/cover6.webp",
+          image: serandibproj,
           live: 'https://senrendibheritagetours.great-site.net'
         },
         {
-          title: "Clothing Shop Website",
-          description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
-          tech: ["WordPress", "PHP", "Astra Theme", "WooCommerce"],
-          image: "/cover4.png",
-          live: 'http://ceylonfashionhub.rf.gd'
+          title: "Cleaning Service Website",
+          description: "A modern WordPress website redesign for a cleaning service company.",
+          tech: ["WordPress", "PHP", "Astra Theme", "CPT", "ACF"],
+          image: cleaningproj,
+          live: 'https://sparkclean.yasinthadev.xyz/'
         },
-        {
-          title: "Clothing Shop Website",
-          description: "Fully Responsive User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
-          tech: ["WordPress", "PHP", "Astra Theme", "WooCommerce"],
-          image: "/cover5.png",
-          live: '#'
-        },
+        // {
+        //   title: "Clothing Shop Website",
+        //   description: "User-friendly e-commerce website for clothing shop to ordering, developed using WordPress.",
+        //   tech: ["WordPress", "PHP", "Astra Theme", "WooCommerce"],
+        //   image: "/cover4.png",
+        //   live: 'http://ceylonfashionhub.rf.gd'
+        // },
       ]
     },
     {
@@ -123,14 +133,14 @@ function Projects() {
           title: "Interior Design Website",
           description: "A modern and elegant website design for an interior design company.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: "/cover1.png",
+          image: "futurehomeui",
           live: 'https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=0Ut054lTamvvJeiu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671'
         },
         {
           title: "Railway Website - UI Redesign",
           description: "This is a redesign of a railway ticket booking website in sri lanka. - Group project.",
           tech: ["Figma", "Adobe XD", "Prototyping"],
-          image: "/cover3.png",
+          image: "railwayui",
           live: 'https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=19-3&starting-point-node-id=19%3A3&t=soMIx04z3RXWTo2d-1'
         }
       ]
@@ -316,7 +326,7 @@ function Projects() {
                         ))}
                       </div>
                       <div className="flex space-x-4 pt-2 border-t border-white/10">
-                        {category.title === "Web Development" && (
+                        {category.title === "Web Applications" && (
                           <motion.a
                             href={project.github}
                             className="flex items-center text-gray-300 hover:text-accent transition-colors text-sm group"
