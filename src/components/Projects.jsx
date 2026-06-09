@@ -108,7 +108,7 @@ function Projects() {
           description: "A modern WordPress tourism website redesign for Senrendib Heritage Tours.",
           tech: ["WordPress", "PHP", "Astra Theme", "CPT", "ACF"],
           image: serandibproj,
-          live: 'https://senrendibheritagetours.great-site.net'
+          live: 'https://senrendibheritagetours.yasinthadev.xyz/'
         },
         {
           title: "Cleaning Service Website",
